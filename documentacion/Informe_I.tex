@@ -1,0 +1,286 @@
+%====================================================================
+% INFORME DE ANTEPROYECTO — ESTADO Y DESARROLLO DEL PROYECTO
+%
+% Compilar con LuaLaTeX, dos veces.
+%====================================================================
+\documentclass[11pt,letterpaper]{article}
+
+% ---------- Matemática y fuentes ----------
+\usepackage{amsmath,mathtools}
+\usepackage{amsthm}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\setmainfont{Latin Modern Roman}
+\setmathfont{Latin Modern Math}
+
+% ---------- Idioma ----------
+\usepackage{polyglossia}
+\setmainlanguage{spanish}
+
+% ---------- Diseño ----------
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage[table]{xcolor}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\setlength{\headheight}{14pt}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{\small\itshape Informe de avance del proyecto}
+\fancyfoot[C]{\small\thepage}
+
+\lstset{
+	language=Python, basicstyle=\ttfamily\small, frame=lines,
+	keywordstyle=\bfseries, commentstyle=\itshape\color{gray},
+	showstringspaces=false, columns=fullflexible, xleftmargin=1em
+}
+
+% ---------- Enlaces y referencias cruzadas ----------
+\usepackage[colorlinks=true,linkcolor=blue!40!black,citecolor=blue!40!black,urlcolor=blue!40!black]{hyperref}
+\usepackage[capitalise]{cleveref}
+\crefname{theorem}{Teorema}{Teoremas}
+\crefname{proposition}{Proposición}{Proposiciones}
+\crefname{lemma}{Lema}{Lemas}
+\crefname{corollary}{Corolario}{Corolarios}
+\crefname{definition}{Definición}{Definiciones}
+\crefname{example}{Ejemplo}{Ejemplos}
+\crefname{conjecture}{Conjetura}{Conjeturas}
+\crefname{section}{Sección}{Secciones}
+\crefname{table}{Tabla}{Tablas}
+\crefname{equation}{ecuación}{ecuaciones}
+
+% ---------- Teoremas (numeración por sección) ----------
+\theoremstyle{plain}
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{proposition}[theorem]{Proposición}
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{corollary}[theorem]{Corolario}
+\newtheorem{conjecture}[theorem]{Conjetura}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definición}
+\newtheorem{example}[theorem]{Ejemplo}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Observación}
+\numberwithin{equation}{section}
+
+
+% Texto predeterminado (aparece en rojo y entre corchetes)
+\newcommand{\ph}[1]{\textcolor{red!70!black}{\textit{[#1]}}}
+
+% Estados para la tabla de avance
+\newcommand{\done}{\textcolor{green!45!black}{\textbf{Completado}}}
+\newcommand{\wip}{\textcolor{orange!80!black}{\textbf{En curso}}}
+\newcommand{\todo}{\textcolor{red!70!black}{\textbf{Pendiente}}}
+
+% =====================================================================
+% DATOS DEL DOCUMENTO  (edita aquí)
+% =====================================================================
+\title{\textbf{\ph{Título del proyecto}} \\[0.4em]
+	\large Informe de anteproyecto y estado de avance}
+\author{%
+	{Anthonny Flores Rojas}\thanks{{Escuela de Matemáticas, Universidad de Costa Rica}. \texttt{{anthonny.flores@ucr.ac.cr}}} \and
+	{Leonardo Vega Aragón}\thanks{{Escuela de Matemáticas, Universidad de Costa Rica}. \texttt{\ph{@ucr.ac.cr}}} \and
+	{Melody Campos Pérez}\thanks{{Escuela de Matemáticas, Universidad de Costa Rica}. \texttt{\ph{@ucr.ac.cr}}} \and
+	{Sebastián Calderón Segura}\thanks{{Escuela de Matemáticas, Universidad de Costa Rica}. \texttt{\ph{@ucr.ac.cr}}}}
+\date{Curso: {Análisis Numérico (MA0501)} \\
+	Profesor: {Esteban Segura} \\[0.3em] \today}
+
+\begin{document}
+	\maketitle
+	
+	% ---------------------------------------------------------------------
+	\begin{abstract}
+		\noindent
+		\ph{Resumen del proyecto en 5 a 8 líneas: qué problema se estudia, qué se ha
+			demostrado o logrado hasta ahora, qué método se usa y qué falta por hacer.}
+	\end{abstract}
+	
+	\medskip
+	\noindent\textbf{Clasificación MSC 2020:} \ph{65Mxx}
+	(primaria); \ph{35Bxx} (secundaria).\\
+	\noindent\textbf{Palabras clave:} \ph{palabra clave 1, palabra clave 2, palabra clave 3}.
+	
+	% ---------------------------------------------------------------------
+	\section{Introducción}\label{sec:intro}
+	
+	\ph{Presentar el problema: qué se estudia, por qué es interesante y qué se
+		sabe hasta ahora. Incluir uno o dos ejemplos sencillos que motiven la
+		pregunta.}
+	
+	\paragraph{Resultados principales.}
+	\ph{Resumir qué se demuestra o se obtiene en este proyecto, citando la
+		bibliografía de base} \cite{Ref1,Ref2}\ph{.}
+	
+	\begin{theorem}[\ph{Nombre del teorema}]\label{thm:principal1}
+		\ph{Enunciado preciso del primer resultado principal.}
+	\end{theorem}
+	
+	\begin{theorem}[\ph{Nombre del teorema}]\label{thm:principal2}
+		\ph{Enunciado preciso del segundo resultado principal.}
+	\end{theorem}
+	
+	\paragraph{Organización.}
+	La \cref{sec:prelim} reúne los preliminares. En la \cref{sec:principal} se
+	demuestran los resultados principales. La \cref{sec:experimentos} presenta
+	la verificación computacional. La \cref{sec:estado} resume el estado del
+	proyecto y el trabajo restante. \ph{Ajustar esta descripción a las secciones
+		que realmente se usen.}
+	
+	% ---------------------------------------------------------------------
+	\section{Preliminares}\label{sec:prelim}
+	
+	\subsection{Definiciones y notación}
+	
+	\ph{Introducir los objetos básicos y la notación que se usará en todo el
+		documento.}
+	
+	\begin{definition}\label{def:principal}
+		\ph{Definición del concepto principal.}
+	\end{definition}
+	
+	\begin{example}
+		\ph{Ejemplo sencillo que ilustre la definición anterior.}
+	\end{example}
+	
+	\subsection{Resultados previos}
+	
+	\begin{lemma}\label{lem:previo}
+		\ph{Enunciado de un resultado previo que se necesitará más adelante.}
+	\end{lemma}
+	
+	\begin{proof}
+		\ph{Demostración del lema.}
+	\end{proof}
+	
+	\begin{proposition}\label{prop:previa}
+		\ph{Enunciado de otra proposición auxiliar.}
+	\end{proposition}
+	
+	\begin{proof}
+		\ph{Demostración de la proposición.}
+	\end{proof}
+	
+	% ---------------------------------------------------------------------
+	\section{Resultados principales}\label{sec:principal}
+	
+	\begin{proof}[Demostración del \cref{thm:principal1}]
+		\ph{Desarrollo completo de la demostración, indicando en cada paso qué
+			resultado previo se usa, por ejemplo el \cref{lem:previo}.}
+	\end{proof}
+	
+	\begin{lemma}\label{lem:auxiliar}
+		\ph{Enunciado del lema auxiliar necesario para el segundo teorema.}
+	\end{lemma}
+	
+	\begin{proof}
+		\ph{Demostración del lema auxiliar.}
+	\end{proof}
+	
+	\begin{proof}[Demostración del \cref{thm:principal2}]
+		\ph{Desarrollo completo de la demostración, usando el \cref{lem:auxiliar}.}
+	\end{proof}
+	
+	\begin{remark}
+		\ph{Comentario sobre el resultado: limitaciones, casos particulares,
+			posibles generalizaciones.}
+	\end{remark}
+	
+	% ---------------------------------------------------------------------
+	\section{Experimentos computacionales}\label{sec:experimentos}
+	
+	\ph{Explicar qué se calculó o verificó con computadora, con qué herramienta
+		y para qué rango de valores. Si el proyecto no incluye cálculos, eliminar
+		esta sección.}
+	
+	\begin{lstlisting}
+		# Escribir aqui el codigo usado (Python, SageMath, etc.)
+	\end{lstlisting}
+	
+	\ph{Explicar los resultados obtenidos y qué conclusión se saca de ellos, en
+		relación con la \cref{tab:resultados}.}
+	
+	\begin{table}[ht]
+		\centering
+		\renewcommand{\arraystretch}{1.2}
+		\begin{tabular}{@{}ccc@{}}
+			\toprule
+			\ph{Columna 1} & \ph{Columna 2} & \ph{Columna 3} \\
+			\midrule
+			\ph{dato} & \ph{dato} & \ph{dato} \\
+			\ph{dato} & \ph{dato} & \ph{dato} \\
+			\ph{dato} & \ph{dato} & \ph{dato} \\
+			\bottomrule
+		\end{tabular}
+		\caption{\ph{Descripción de los datos mostrados.}}\label{tab:resultados}
+	\end{table}
+	
+	% ---------------------------------------------------------------------
+	\section{Estado del proyecto y trabajo restante}\label{sec:estado}
+	
+	\subsection{Resumen del avance}
+	
+	\ph{Introducir brevemente la tabla: a qué fecha corresponde y qué se ha
+		logrado.} Los estados posibles son \done, \wip\ y \todo. La
+	\cref{tab:estado} indica el responsable de cada objetivo.
+	
+	\begin{table}[ht]
+		\centering
+		\renewcommand{\arraystretch}{1.25}
+		\begin{tabular}{@{}l p{5.6cm} l c@{}}
+			\toprule
+			\textbf{Objetivo} & \textbf{Descripción} & \textbf{Responsable} & \textbf{Estado} \\
+			\midrule
+			O1 & \ph{Descripción del objetivo 1} & \ph{Nombre} & \done \\
+			O2 & \ph{Descripción del objetivo 2} & \ph{Nombre} & \wip \\
+			O3 & \ph{Descripción del objetivo 3} & \ph{Nombre} & \wip \\
+			O4 & \ph{Descripción del objetivo 4} & \ph{Nombre} & \todo \\
+			O5 & \ph{Redacción del informe final} & \ph{Todos} & \todo \\
+			\bottomrule
+		\end{tabular}
+		\caption{Estado de los objetivos a la fecha del informe.}\label{tab:estado}
+	\end{table}
+	
+	\subsection{Trabajo en curso}
+	
+	\ph{Describir en qué se está trabajando ahora: qué se quiere demostrar o
+		construir y hasta dónde se ha llegado.}
+	\begin{equation}\label{eq:pendiente}
+		\ph{fórmula o resultado que se quiere probar}
+	\end{equation}
+	
+	\begin{conjecture}\label{conj:pendiente}
+		\ph{Conjetura o resultado pendiente de demostrar (opcional).}
+	\end{conjecture}
+	
+	\subsection{Dificultades y plan}
+	
+	\begin{itemize}[leftmargin=2em]
+		\item \textbf{Dificultad:} \ph{descripción del problema encontrado.}
+		\emph{Plan:} \ph{cómo se piensa resolver.}
+		\item \textbf{Dificultad:} \ph{descripción del problema encontrado.}
+		\emph{Plan:} \ph{cómo se piensa resolver.}
+	\end{itemize}
+	
+	\subsection{Cronograma}
+	
+	\begin{enumerate}[leftmargin=2em]
+		\item \ph{Actividad 1} \hfill \emph{(\ph{semanas 1--2})}
+		\item \ph{Actividad 2} \hfill \emph{(\ph{semanas 2--4})}
+		\item \ph{Redacción del informe final y presentación} \hfill \emph{(\ph{semanas 4--6})}
+	\end{enumerate}
+	
+	% ---------------------------------------------------------------------
+	\begin{thebibliography}{9}
+		
+		\bibitem{Ref1}
+		\ph{Autor(es), \emph{Título del libro}, edición, editorial, ciudad, año.}
+		
+		\bibitem{Ref2}
+		\ph{Autor(es), \emph{Título del artículo}, revista \textbf{volumen} (año), páginas.}
+		
+	\end{thebibliography}
+	
+\end{document}
