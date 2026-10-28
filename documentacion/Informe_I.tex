@@ -11,7 +11,7 @@
 \usepackage{fontspec}
 \usepackage{unicode-math}
 \setmainfont{Latin Modern Roman}
-\setmathfont{Latin Modern Math}
+\setmathfont{NewCMMath-Book}
 
 % ---------- Idioma ----------
 \usepackage{polyglossia}
@@ -52,6 +52,7 @@
 \crefname{table}{Tabla}{Tablas}
 \crefname{equation}{ecuación}{ecuaciones}
 
+
 % ---------- Teoremas (numeración por sección) ----------
 \theoremstyle{plain}
 \newtheorem{theorem}{Teorema}[section]
@@ -65,9 +66,27 @@
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Observación}
 \numberwithin{equation}{section}
+\gappto\captionsspanish{\renewcommand{\proofname}{Demostración}}
 
+% ---------- Macros y entornos usados en el desarrollo teórico ----------
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\E}{\mathbb{E}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\Sh}{\mathcal{S}}
+\DeclareMathOperator{\LSE}{LSE}
 
-% Texto predeterminado (aparece en rojo y entre corchetes)
+\newtheorem{teorema}[theorem]{Teorema}
+\newtheorem{proposicion}[theorem]{Proposición}
+\newtheorem{lema}[theorem]{Lema}
+\newtheorem{corolario}[theorem]{Corolario}
+\newtheorem{definicion}[theorem]{Definición}
+\newtheorem{ejemplo}[theorem]{Ejemplo}
+\newtheorem{observacion}[theorem]{Observación}
+
+% Texto predeterminado
 \newcommand{\ph}[1]{\textcolor{red!70!black}{\textit{[#1]}}}
 
 % Estados para la tabla de avance
@@ -75,132 +94,476 @@
 \newcommand{\wip}{\textcolor{orange!80!black}{\textbf{En curso}}}
 \newcommand{\todo}{\textcolor{red!70!black}{\textbf{Pendiente}}}
 
-% =====================================================================
-% DATOS DEL DOCUMENTO  (edita aquí)
-% =====================================================================
-\title{\textbf{\ph{Burgers, Hopf–Cole y esquemas numéricos}} \\[0.4em]
-	\large Informe de anteproyecto y estado de avance}
+%====================================================================
+% DATOS DEL DOCUMENTO
+%====================================================================
+\title{\textbf{Burgers, Hopf--Cole y esquemas numéricos} \\[0.4em]
+	\large Informe de anteproyecto}
+
 \author{%
-	{Anthonny Flores Rojas}\thanks{{Escuela de Matemáticas, Universidad de Costa Rica}. \texttt{{anthonny.flores@ucr.ac.cr}}} \and
-	{Leonardo Vega Aragón}\thanks{{Escuela de Matemáticas, Universidad de Costa Rica}. \texttt{\ph{@ucr.ac.cr}}} \and
-	{Melody Campos Pérez}\thanks{{Escuela de Matemáticas, Universidad de Costa Rica}. \texttt{\ph{@ucr.ac.cr}}} \and
-	{Sebastián Calderón Segura}\thanks{{Escuela de Matemáticas, Universidad de Costa Rica}. \texttt{\ph{@ucr.ac.cr}}}}
-\date{Curso: {Análisis Numérico (MA0501)} \\
-	Profesor: {Esteban Segura} \\[0.3em] \today}
+	{Anthonny Flores Rojas}\thanks{{Escuela de Matemáticas, Universidad de Costa Rica}. \texttt{anthonny.flores@ucr.ac.cr}} \and
+	{Leonardo Vega Aragón}\thanks{{Escuela de Matemáticas, Universidad de Costa Rica}. \texttt{leonardo.vega@ucr.ac.cr}} \and
+	{Melody Campos Pérez}\thanks{{Escuela de Matemáticas, Universidad de Costa Rica}. \texttt{melody.campos@ucr.ac.cr}} \and
+	{Sebastián Calderón Segura}\thanks{{Escuela de Matemáticas, Universidad de Costa Rica}. \texttt{sebastian.calderon@ucr.ac.cr}}}
+
+\date{Curso: Análisis Numérico (MA0501) \\
+	Profesor: Esteban Segura \\[0.3em] \today}
 
 \begin{document}
+	
 	\maketitle
 	
-	% ---------------------------------------------------------------------
 	\begin{abstract}
-		\noindent
-		\ph{Resumen del proyecto en 5 a 8 líneas: qué problema se estudia, qué se ha
-			demostrado o logrado hasta ahora, qué método se usa y qué falta por hacer.}
+		Se estudia la conexión entre control estocástico, Black-Scholes y Burgers mediante una transformación de Hopf-Cole.
 	\end{abstract}
 	
 	\medskip
-	\noindent\textbf{Clasificación MSC 2020:} \ph{65Mxx}
-	(primaria); \ph{35Bxx} (secundaria).\\
-	\noindent\textbf{Palabras clave:} \ph{palabra clave 1, palabra clave 2, palabra clave 3}.
 	
-	% ---------------------------------------------------------------------
+	%\noindent\textbf{Clasificación MSC 2020:} 65Mxx (primaria); 35Bxx (secundaria).\\
+	
+	\noindent\textbf{Palabras clave:} ecuación de Burgers, transformación de Hopf-Cole, Black-Scholes, esquemas numéricos.
+	
 	\section{Introducción}\label{sec:intro}
 	
-	\ph{Presentar el problema: qué se estudia, por qué es interesante y qué se
-		sabe hasta ahora. Incluir uno o dos ejemplos sencillos que motiven la
-		pregunta.}
+	El proyecto estudia la conexión entre un problema de control estocástico inspirado en el enfoque de Lindgren~\cite{Lindgren2020}, la ecuación de Black-Scholes y la ecuación viscosa de Burgers. Lindgren muestra que el drift de un mercado que soporta la valoración de Black--Scholes cumple una ecuación de Burgers retrógrada~\cite[Teorema~1]{Lindgren2020}.
 	
-	\paragraph{Resultados principales.}
-	\ph{Resumir qué se demuestra o se obtiene en este proyecto, citando la
-		bibliografía de base} \cite{Ref1,Ref2}\ph{.}
-	
-	\begin{theorem}[\ph{Nombre del teorema}]\label{thm:principal1}
-		\ph{Enunciado preciso del primer resultado principal.}
-	\end{theorem}
-	
-	\begin{theorem}[\ph{Nombre del teorema}]\label{thm:principal2}
-		\ph{Enunciado preciso del segundo resultado principal.}
-	\end{theorem}
-	
-	\paragraph{Organización.}
-	La \cref{sec:prelim} reúne los preliminares. En la \cref{sec:principal} se
-	demuestran los resultados principales. La \cref{sec:experimentos} presenta
-	la verificación computacional. La \cref{sec:estado} resume el estado del
-	proyecto y el trabajo restante. \ph{Ajustar esta descripción a las secciones
-		que realmente se usen.}
-	
-	% ---------------------------------------------------------------------
 	\section{Preliminares}\label{sec:prelim}
 	
-	\subsection{Definiciones y notación}
+	\subsection{Convenciones y notación}
 	
-	\ph{Introducir los objetos básicos y la notación que se usará en todo el
-		documento.}
+	Sean \(T>0\), \(\sigma>0\), \(r>0\) constantes y
 	
-	\begin{definition}\label{def:principal}
-		\ph{Definición del concepto principal.}
-	\end{definition}
+	\begin{equation}\label{eq:consts}
+		\nu:=\frac12\sigma^2,\qquad b:=\frac12\sigma^2-r
+	\end{equation}
 	
-	\begin{example}
-		\ph{Ejemplo sencillo que ilustre la definición anterior.}
-	\end{example}
+	\(\tau\in[0,T]\) es el tiempo calendario, \(s:=T-\tau\) el tiempo hasta el vencimiento, \(x=\log S\) el log-precio. El \emph{payoff} \(Y:\R\to[0,\infty)\) es medible, no nulo en un conjunto de medida positiva, con \(Y(x)\le Ae^{B|x|}\).
 	
-	\subsection{Resultados previos}
+	Para las Secciones~\ref{subsec:burgers}--\ref{subsec:error} (donde aparecen \(g=-\log Y\), \(u_0=b-\sigma^2Y'/Y\) y cocientes \(C^0_{j+1}/C^0_j\)) se supone además
 	
-	\begin{lemma}\label{lem:previo}
-		\ph{Enunciado de un resultado previo que se necesitará más adelante.}
-	\end{lemma}
+	(HY) \(Y\in C^3(\R)\), \(Y>0\), \(Y\) acotada y \(\ell:=\log Y\) tiene \(\ell',\ell'',\ell'''\) acotadas. Un payoff tipo call, que se anula en una región, no cumple (HY); se puede regularizar con \(Y_\varepsilon=Y+\varepsilon\).
+	
+	\subsection{Problema de control de Lindgren y linealización}
+	
+	El log-precio sigue \(\mathrm{d}X_t=\mu_t\dd t+\sigma\dd W_t\)~\cite[ec.~(3)]{Lindgren2020}. Un control \(\mu\) es \emph{admisible} si es progresivamente medible y \(\E\left[\int_\tau^T\mu_t^2\dd t\right]<\infty\). La <<información local>> es cuadrática~\cite[ec.~(5)]{Lindgren2020},
+	
+	\begin{equation}\label{eq:I}
+		I(m)=\frac12\alpha m^2+\beta m+\gamma,\qquad \alpha>0
+	\end{equation}
+	
+	y el costo es~\cite[ec.~(6)--(7)]{Lindgren2020}
+	
+	\begin{equation}\label{eq:cost}
+		\mathcal J(\mu;x,\tau)=\E_{x,\tau}\left[\int_\tau^T I(\mu_t)\,dt+g(X_T)\right],\qquad J(x,\tau)=\inf_\mu\mathcal J(\mu;x,\tau)
+	\end{equation}
+	
+	Por programación dinámica (formalmente)~\cite[Sec.~2.2]{Lindgren2020} la función valor satisface la ecuación de Hamilton--Jacobi--Bellman (HJB)
+	
+	\begin{equation}\label{eq:HJB}
+		J_\tau+\frac12\sigma^2J_{xx}+\min_{m\in\R}\{\,mJ_x+I(m)\,\}=0,\qquad J(x,T)=g(x)
+	\end{equation}
+	
+	Para~\eqref{eq:I}, el mínimo se alcanza en \(m^\ast=-(J_x+\beta)/\alpha\) y vale \(\gamma-(J_x+\beta)^2/(2\alpha)\) (cf.~\cite[ec.~(9)--(13)]{Lindgren2020}); por tanto
+	
+	\begin{equation}\label{eq:HJBq}
+		J_\tau+\frac12\sigma^2J_{xx}=\frac{(J_x+\beta)^2}{2\alpha}-\gamma,\qquad \mu^\ast(x,\tau)=-\frac{J_x+\beta}{\alpha}
+	\end{equation}
+	
+	
+	\begin{teorema}[Verificación]\label{teo:verif}
+		Sea \(J\in C^{2,1}(\R\times[0,T])\) solución clásica de~\eqref{eq:HJBq} con \(J(\cdot,T)=g\) y \(J_x\) acotada, y supongamos que \(\mu^\ast_t:=\mu^\ast(X_t,t)\) es admisible para la SDE correspondiente. Entonces \(J(x,\tau)\le\mathcal J(\mu;x,\tau)\) para todo control admisible \(\mu\), con igualdad para \(\mu=\mu^\ast\).
+	\end{teorema}
 	
 	\begin{proof}
-		\ph{Demostración del lema.}
+		Sea \(\mu\) admisible y \(K:=\sup|J_x|<\infty\). Como \(J\in C^{2,1}\), \(M_J:=\sup_{t\in[0,T]}|J(0,t)|<\infty\), y por el teorema del valor medio \(|J(x,t)|\le M_J+K|x|\). Como \(X_t=x+\int_\tau^t\mu_u\,du+\sigma(W_t-W_\tau)\), se tiene
+		\[
+		|X_t|\le |x|+\int_\tau^t|\mu_u|\,du+\sigma|W_t-W_\tau|
+		\]
+		
+		Por Cauchy--Schwarz, \(\int_\tau^t|\mu_u|\,du\le\sqrt{T} \left(\int_\tau^T\mu_u^2\,du\right)^{1/2}\), y por Jensen \(\E\left[\left(\int_\tau^T\mu_u^2\,du\right)^{1/2}\right]\le \left(\E\left[\int_\tau^T\mu_u^2\,du\right]\right)^{1/2}\). Además
+		\(\E[|W_t-W_\tau|]\le\sqrt{T}\). Luego
+		\[
+		\sup_{t\in[\tau,T]}\E[|X_t|]\le |x|+\sqrt{T}\left(\E\left[\int_\tau^T\mu_u^2\,du\right]\right)^{1/2}+\sigma\sqrt{T}<\infty,
+		\qquad
+		\E[|J(X_t,t)|]\le M_J+K\,\E[|X_t|]<\infty
+		\]
+		es decir, \(J(X_t,t)\) es integrable (y también \(g(X_T)=J(X_T,T)\)).
+		Además \(\E\left[\int_\tau^T|I(\mu_t)|\,dt\right]<\infty\), pues \(I\) es cuadrática y
+		\(\E\left[\int\mu_t^2\,dt\right]<\infty\).
+		
+		Por otra parte, \(\sigma J_x(X_t,t)\) es continuo, adaptado (todos sus elementos son \(\mathscr{F}_t\)-medibles) y acotado por \(\sigma K\); entonces \(\E\left[\int_\tau^T \sigma^{2} J^{2}_x(X_t,t)\,d t\right]\le\sigma^2K^2T<\infty\), por lo tanto \(\int_\tau^t\sigma J_x(X_u,u)\,dW_u\) es una martingala de cuadrado integrable. Por Itô y \eqref{eq:HJBq}
+		
+		\[
+		\E\left[J(X_T,T)\right]-J(x,\tau)=\E\left[\int_\tau^T\left(J_\tau+\mu_tJ_x+\frac12\sigma^2J_{xx}\right)(X_t,t)\dd t\right] \geq \E\left[\int_\tau^T -I(\mu_t)\,dt\right]
+		\]
+		
+		Como \(J(X_T,T)=g(X_T)\), \(J(x,\tau)\le\E\left[\int_\tau^TI(\mu_t)\dd t+g(X_T)\right]\). Para \(\mu^\ast\) la desigualdad es igualdad.
+		
 	\end{proof}
 	
-	\begin{proposition}\label{prop:previa}
-		\ph{Enunciado de otra proposición auxiliar.}
-	\end{proposition}
+	\begin{proposicion}[Linealización de Hopf--Cole]\label{prop:HC}
+		Sea \(\alpha=1/\sigma^2\) y \(C>0\) de clase \(C^{2,1}\). Entonces \(J=-\log C\) resuelve~\eqref{eq:HJBq} si y solo si
+		
+		\begin{equation}\label{eq:lin}
+			C_\tau+\frac12\sigma^2C_{xx}=\frac{\beta}{\alpha}\,C_x+\left(\gamma-\frac{\beta^2}{2\alpha}\right)C,\qquad C(x,T)=e^{-g(x)}
+		\end{equation}
+	\end{proposicion}
 	
 	\begin{proof}
-		\ph{Demostración de la proposición.}
+		Con \(J=-\log C\) (Lindgren usa \(J=\kappa\log C\) y elige \(\kappa=-1\)~\cite[ec.~(14)--(15)]{Lindgren2020}). \(J_\tau=-C_\tau/C\), \(J_x=-C_x/C\), \(J_{xx}=-C_{xx}/C+C_x^2/C^2\). Sustituyendo en~\eqref{eq:HJBq}
+		
+		\[
+		-\frac{C_\tau}{C}-\frac{\sigma^2}{2}\frac{C_{xx}}{C}+\frac{\sigma^2}{2}\frac{C_x^2}{C^2} =\frac{1}{2\alpha}\frac{C_x^2}{C^2}-\frac{\beta}{\alpha}\frac{C_x}{C}+\frac{\beta^2}{2\alpha}-\gamma
+		\]
+		
+		Los términos en \(C_x^2/C^2\) se cancelan exactamente cuando \(\frac12\sigma^2=\frac1{2\alpha}\), es decir \(\alpha=1/\sigma^2\). Multiplicando por \(-C\) resulta~\eqref{eq:lin}.
+		
+		\qedhere
 	\end{proof}
 	
-	% ---------------------------------------------------------------------
+	\begin{corolario}[Identificación con Black--Scholes]\label{cor:BS}
+		Si \(\alpha=1/\sigma^2\), \(\beta=b/\sigma^2=\frac12-r/\sigma^2\) y \(\gamma=r+\frac12\sigma^2\beta^2\) (véase~\cite[Sec.~2.3, ec.~(16)--(18)]{Lindgren2020}), la ecuación~\eqref{eq:lin} es
+		
+		\begin{equation}\label{eq:BS}
+			C_\tau+\frac12\sigma^2C_{xx}=b\,C_x+rC,\qquad C(x,T)=Y(x)
+		\end{equation}
+		
+		la ecuación de Black--Scholes en log-precio, con \(g=-\log Y\). En el tiempo \(s=T-\tau\):
+		
+		\begin{equation}\label{eq:BSs}
+			C_s=\nu C_{xx}-bC_x-rC,\qquad C(x,0)=Y(x)
+		\end{equation}
+	\end{corolario}
+	
 	\section{Resultados principales}\label{sec:principal}
 	
-	\begin{proof}[Demostración del \cref{thm:principal1}]
-		\ph{Desarrollo completo de la demostración, indicando en cada paso qué
-			resultado previo se usa, por ejemplo el \cref{lem:previo}.}
-	\end{proof}
+	\subsection{Ecuación de Burgers para el drift}\label{subsec:burgers}
 	
-	\begin{lemma}\label{lem:auxiliar}
-		\ph{Enunciado del lema auxiliar necesario para el segundo teorema.}
-	\end{lemma}
+	\begin{proposicion}[{\cite[Teorema~1]{Lindgren2020}}]\label{prop:burgers}
+		Sea \(C>0\) de clase \(C^{3,1}\) solución de~\eqref{eq:BS}. Entonces \(\mu:=-b+\sigma^2\partial_x\log C\) (que coincide con \(\mu^\ast\) de~\eqref{eq:HJBq}) cumple
+		
+		\begin{equation}\label{eq:burgersb}
+			\mu_\tau+\mu\,\mu_x+\frac12\sigma^2\mu_{xx}=0
+		\end{equation}
+	\end{proposicion}
 	
 	\begin{proof}
-		\ph{Demostración del lema auxiliar.}
+		Lindgren obtiene este resultado derivando la HJB~\eqref{eq:HJBq} en \(x\)~\cite[ec.~(19)--(20)]{Lindgren2020}; aquí se da una demostración a través de la ecuación lineal.
+		
+		Sea \(w=\log C\). Como \(C_{xx}/C=w_{xx}+w_x^2\), dividiendo~\eqref{eq:BS} por \(C\), entonces
+		
+		\[
+		w_\tau=-\frac12\sigma^2(w_{xx}+w_x^2)+b\,w_x+r
+		\]
+		
+		Derivando en \(x\) y tomando \(v=\sigma^2w_x\) se tiene
+		
+		\[
+		v_\tau=-\frac12\sigma^2v_{xx}-v\,v_x+b\,v_x
+		\]
+		
+		Con \(\mu=v-b\) (así \(\mu_x=v_x\) y \(\mu_\tau=v_\tau\))
+		
+		\[
+		\mu_\tau+\mu\mu_x+\frac12\sigma^2\mu_{xx} =\left(-\frac12\sigma^2v_{xx}-vv_x+bv_x\right)+(v-b)v_x+\frac12\sigma^2v_{xx}=0
+		\]
+		
+		La identidad \(\mu=\mu^\ast\) sale de \(J=-\log C\), \(\alpha=1/\sigma^2\), \(\beta/\alpha=b\) en~\eqref{eq:HJBq}.
+		
 	\end{proof}
 	
-	\begin{proof}[Demostración del \cref{thm:principal2}]
-		\ph{Desarrollo completo de la demostración, usando el \cref{lem:auxiliar}.}
+	\begin{corolario}[Forma progresiva]\label{cor:fwd}
+		Con \(s=T-\tau\) y \(u(x,s):=-\mu(x,T-s)=b-\sigma^2\partial_x\log C\):
+		
+		\begin{equation}\label{eq:burgers}
+			u_s+u\,u_x=\nu\,u_{xx},\qquad u(x,0)=b-\sigma^2\,\frac{Y'(x)}{Y(x)}
+		\end{equation}
+	\end{corolario}
+	
+	\begin{proof}
+		\(\mu_\tau=-\mu_s\) y \(\mu=-u\) en~\eqref{eq:burgersb} dan \(u_s=-uu_x+\nu u_{xx}\) tras el cambio de signo.
+		
 	\end{proof}
 	
-	\begin{remark}
-		\ph{Comentario sobre el resultado: limitaciones, casos particulares,
-			posibles generalizaciones.}
-	\end{remark}
+	\begin{proposicion}[Representación explícita]\label{prop:rep}
+		Sea \(\varphi(y,s)=\E\left[Y(y+\sigma\sqrt{s}\,Z)\right]\), \(Z\sim N(0,1)\), y \(C(x,s)=e^{-rs}\varphi(x-bs,s)\). Entonces \(C\in C^\infty(\R\times(0,T])\), \(C>0\), \(C\) resuelve~\eqref{eq:BSs}, \(C(\cdot,s)\to Y\) en puntos de continuidad, y
+		
+		\begin{equation}\label{eq:uexplicit}
+			u(x,s)=b-\sigma^2\,\partial_x\log\varphi(x-bs,s)=b+\tilde u(x-bs,s),\qquad \tilde u=-2\nu\,\frac{\varphi_y}{\varphi}
+		\end{equation}
+		
+		donde \(\tilde u\) es la solución clásica de Cole--Hopf de \(\tilde u_s+\tilde u\tilde u_y=\nu\tilde u_{yy}\).
+	\end{proposicion}
 	
-	% ---------------------------------------------------------------------
+	\begin{proof}
+		Sea \(G_{\nu s}(z)=(4\pi\nu s)^{-1/2}e^{-z^2/(4\nu s)}\) el núcleo del calor, de modo que \(\varphi(y,s)=(G_{\nu s}*Y)(y)=\int_{\R} Y(w)G_{\nu s}(y-w)\,dw\) (nótese que \(2\nu=\sigma^2\)). Fíjese \(K=[-R,R]\times[s_0,s_1]\subset\R\times(0,\infty)\). Toda derivada \(\partial_y^a\partial_s^c G_{\nu s}(y-w)\) es un polinomio sobre \((y-w,\,s^{-1})\) por \(G_{\nu s}(y-w)\); por tanto, para \((y,s)\in K\),
+		\[
+		Y(w)\,\left|\partial_y^a\partial_s^c G_{\nu s}(y-w)\right|
+		\le C_{a,c,K}\,(1+|w|^{N})\,e^{B|w|}\,e^{-(|w|-R)^2/(4\nu s_1)}, \quad(|w|>R)
+		\]
+		con \(C_{a,c,K}\) una constante dependiente de \(a,c,K\), entonces el lado derecho es integrable en \(w\) e independiente de \((y,s)\in K\). Por convergencia dominada se puede derivar bajo la integral tantas veces como se quiera, luego \(\varphi\in C^\infty(\R\times(0,\infty))\). Como \(\partial_sG_{\nu s}=\nu\,\partial_{yy}G_{\nu s}\), se obtiene \(\varphi_s=\nu\varphi_{yy}\). Como \(Y\ge0\) no es nula y \(G_{\nu s}>0\), se tiene \(\varphi(y,s)=\int Y\,G_{\nu s}>0\), luego \(C>0\).
+		
+		Si \(C(x,s)=e^{-rs}\varphi(x-bs,s)\), entonces
+		\[
+		C_s=-rC+e^{-rs}(\varphi_s-b\varphi_y),\qquad C_x=e^{-rs}\varphi_y,\qquad C_{xx}=e^{-rs}\varphi_{yy}
+		\]
+		y, usando \(\varphi_s=\nu\varphi_{yy}\), la identidad \(C_s=-rC-bC_x+\nu C_{xx}\) equivale a ~\eqref{eq:BSs}. \(C\in C^\infty(\R\times(0,T])\) por ser composición y producto de funciones \(C^\infty\) en \(s>0\).
+		
+		Si \(u(x,s)=b+\tilde u(x-bs,s)\), entonces \(u_s=\tilde u_s-b\tilde u_y\), \(u_x=\tilde u_y\), \(u_{xx}=\tilde u_{yy}\), y
+		\[
+		u_s+uu_x=\tilde u_s-b\tilde u_y+(b+\tilde u)\tilde u_y=\tilde u_s+\tilde u\tilde u_y
+		\]
+		
+		Por tanto \(u\) resuelve Burgers con viscosidad \(\nu\) si y solo si \(\tilde u\) también lo resuelve. Como \(\varphi>0\) es \(C^\infty\) y \(\varphi_s=\nu\varphi_{yy}\), la función \(\tilde u=-2\nu\,\varphi_y/\varphi=-2\nu\,\partial_y\log\varphi\) es la transformada de Cole-Hopf clásica y resuelve \(\tilde u_s+\tilde u\tilde u_y=\nu\tilde u_{yy}\). Finalmente, \(u=b+\tilde u(x-bs,s)=b-\sigma^2\partial_x\log\varphi(x-bs,s)\), pues \(2\nu=\sigma^2\).
+		
+		La convergencia \(C(\cdot,s)\to Y\) en puntos de continuidad es la propiedad de aproximación de la identidad del núcleo gaussiano, con la cola controlada por \(Y(w)\le Ae^{B|w|}\).
+		
+	\end{proof}
+	
+	\begin{proposicion}[Cotas a priori uniformes en \(\nu\)]\label{prop:apriori}
+		Sea \(Y\) que cumple (HY), de modo que \(u_0=b-\sigma^2\ell'\in C_b^2(\R)\), y \(u\) la solución acotada de~\eqref{eq:burgers}. Entonces
+		
+		\begin{enumerate}[label=(\alph*)]
+			\item (máximo) \(\inf u_0\le u(x,s)\le\sup u_0\);
+			\item (Oleinik) \(u_x(x,s)\le \dfrac{1}{s+1/\Lambda}\le\dfrac1s\), con \(\Lambda=\sup(u_0)_x\) (si \(\Lambda\le0\), \(u_x\le0\)).
+		\end{enumerate}
+	\end{proposicion}
+	
+	\begin{proof}
+		(a) \(u\) resuelve la ecuación parabólica lineal \(u_s+a\,u_x=\nu u_{xx}\) con coeficiente \(a=u\) acotado; el principio del máximo para soluciones acotadas en \(\R\) (Phragmén--Lindelöf) da el resultado. (b) \(z=u_x\) cumple \(z_s+uz_x+z^2=\nu z_{xx}\). Sea \(\bar z(s)=1/(s+1/\Lambda)\) (\(\Lambda>0\)), que satisface \(\bar z'=-\bar z^2\) y \(\bar z(0)=\Lambda\ge z(\cdot,0)\). Entonces \(q=\bar z-z\) resuelve \(q_s+uq_x-\nu q_{xx}+(\bar z+z)q=0\), con \(q(\cdot,0)\ge0\) y coeficientes acotados, por lo que \(q\ge0\).
+		
+	\end{proof}
+	
+	\subsection{Esquema theta y estructura de cono}\label{subsec:theta}
+	\label{sec:theta}
+	
+	Malla \(x_j=jh\), \(j\in\Z\), \(s_n=n\Delta s\). Sea \((\Sh\phi)_j=\phi_{j+1}\) el desplazamiento y \((I\phi)_{j+1}=\phi_{j+1}\) el operador identidad y
+	
+	\begin{equation}\label{eq:Lh}
+		L_h=a_-\Sh^{-1}-\left(\frac{\sigma^2}{h^2}+r\right)I+a_+\Sh,\qquad a_\pm=\frac{\nu}{h^2}\mp\frac{b}{2h}
+	\end{equation}
+	
+	más precisamente \(a_-=\nu/h^2+b/(2h)\) multiplica a \(C_{j-1}\) y \(a_+=\nu/h^2-b/(2h)\) a \(C_{j+1}\). El esquema para~\eqref{eq:BSs} es
+	
+	\begin{equation}\label{eq:theta}
+		\underbrace{(I-\theta\Delta s\,L_h)}_{=:\mathcal A}C^{n+1}=\underbrace{(I+(1-\theta)\Delta s\,L_h)}_{=:P}C^n,\qquad C^0_j=Y(x_j),\quad \theta\in[0,1]
+	\end{equation}
+	
+	(\(\theta=0\): Euler explícito; \(\theta=1\): implícito; \(\theta=\frac12\): Crank--Nicolson.) Se asumen
+	
+	\begin{align}
+		&\text{(H1) Péclet de malla:}\quad h|b|<\sigma^2\quad(\Leftrightarrow a_\pm>0),\label{eq:H1}\\
+		&\text{(H2) CFL parcial:}\quad (1-\theta)\,\Delta s\,\left(\sigma^2/h^2+r\right)\le 1\label{eq:H2}
+	\end{align}
+	
+	Para CN, (H2) dice \(\Delta s\,(\sigma^2/h^2+r)\le2\), es decir \(\Delta s=O(h^2)\).
+	
+	\begin{lema}[Positividad y contractividad]\label{lema:pos}
+		Bajo (H1)--(H2), \(\mathcal A:=I-\theta\Delta s\,L_h\) es invertible en \(\ell^\infty(\Z)\) (sucesiones acotadas indexadas por \(\Z\)), y \(P:=I+(1-\theta)\Delta s\,L_h\) es positivo. Por tanto \(T_\theta:=\mathcal A^{-1}P\) conmuta con \(\Sh\), es positivo (\(\phi\ge0\Rightarrow T_\theta\phi\ge0\)), \(\norm{T_\theta}_{\ell^\infty\to\ell^\infty}\le1\) y \(\norm{\mathcal A^{-1}}\le1\). Además, si \(\phi>0\) entonces \(T_\theta\phi>0\); y si \(\theta>0\) basta \(\phi\ge0\), \(\phi\neq0\).
+	\end{lema}
+	
+	\begin{proof}
+		Sea \(c=1+\theta\Delta s(\sigma^2/h^2+r)\) y \(\mathcal K=\frac{\theta\Delta s}{c}(a_-\Sh^{-1}+a_+\Sh)\ge0\). Como \(a_-+a_+=\sigma^2/h^2\), \(\norm{\mathcal K}\le\frac{\theta\Delta s\,\sigma^2/h^2}{c}<1\), así \(\mathcal A=c(I-\mathcal K)\) es invertible en \(\ell^\infty\) con \(\mathcal A^{-1}=c^{-1}\sum_{k\ge0}\mathcal K^k\) (geométrica), positivo y conmutante con \(\Sh\) (cada \(\mathcal K^k\) es polinomio en \(\Sh,\Sh^{-1}\) con coeficientes \(\ge0\)).
+		
+		\(P\) es positivo: sus coeficientes son \(1-(1-\theta)\Delta s(\sigma^2/h^2+r)\ge0\) en el centro (por (H2)) y \((1-\theta)\Delta s\,a_\pm\ge0\) en las diagonales (por (H1)). Así \(T_\theta=\mathcal A^{-1}P\) es composición de operadores positivos y conmuta con \(\Sh\).
+		
+		Para la positividad estricta: si \(\theta>0\) y \(a_\pm>0\), \(\mathcal K^k\) tiene coeficientes \(>0\) en los desplazamientos \(i\equiv k\ (\mathrm{mod}\ 2)\), \(|i|\le k\); sumando sobre \(k\) aparecen todos los \(i\in\Z\), luego \(\mathcal A^{-1}\psi>0\) si \(\psi\ge0\), \(\psi\ne0\). Si \(\phi>0\), entonces \(P\phi>0\) (el peso central es \(\ge0\) y los laterales son \(>0\) cuando \(\theta<1\); para \(\theta=1\), \(P=I\)). Para \(\theta=0\), \(\mathcal A=I\) y \(T_\theta=P\).
+		
+		Sea \(\mathbf 1=(\dots,1,1,1,\dots)\in\ell^\infty(\Z)\). Si \(T\ge0\) y \(\phi\in\ell^\infty(\Z)\), como \(-\norm\phi_\infty\mathbf 1\le\phi\le\norm\phi_\infty\mathbf 1\) y \(T\) es lineal y preserva el orden, \(|T\phi|\le\norm\phi_\infty\,T\mathbf 1\); luego \(\norm{T\phi}_\infty\le\norm\phi_\infty\norm{T\mathbf 1}_\infty\). Tomando \(\phi=\mathbf 1\) se obtiene la igualdad: \(\norm T=\norm{T\mathbf 1}_\infty\).
+		
+		Como \(\Sh^{\pm1}\mathbf 1=\mathbf 1\) y \(a_-+a_+=\sigma^2/h^2\), se tiene \(L_h\mathbf 1=-r\,\mathbf 1\), y por tanto
+		\[
+		\mathcal A\mathbf 1=(1+\theta\Delta s\,r)\mathbf 1,\qquad
+		P\mathbf 1=(1-(1-\theta)\Delta s\,r)\mathbf 1
+		\]
+		
+		Así \(\mathbf 1\) es vector propio de \(\mathcal A\), luego de \(\mathcal A^{-1}\), con \(\mathcal A^{-1}\mathbf 1=\mathbf 1/(1+\theta\Delta s\,r)\), y
+		\[
+		T_\theta\mathbf 1=\mathcal A^{-1}P\mathbf 1=\frac{1-(1-\theta)\Delta s\,r}{1+\theta\Delta s\,r}\,\mathbf 1
+		\]
+		
+		Por (H2), \(0\le(1-\theta)\Delta s\,r\le1\), así que el numerador está en \([0,1]\), y el denominador es \(\ge1\). Por tanto \(\norm{T_\theta}=\norm{T_\theta\mathbf 1}_\infty\le1\) y \(\norm{\mathcal A^{-1}}=\norm{\mathcal A^{-1}\mathbf 1}_\infty=\frac1{1+\theta\Delta s\,r}\le1\).
+		
+	\end{proof}
+	
+	\begin{definicion}[Drift discreto]
+		Para \(C^n>0\) se define, en las aristas \(x_{j+1/2}\),
+		
+		\begin{equation}\label{eq:driftdisc}
+			\mu^n_{j+1/2}:=-b+\frac{\sigma^2}{h}\log\frac{C^n_{j+1}}{C^n_j},\qquad u^n_{j+1/2}:=-\mu^n_{j+1/2}
+		\end{equation}
+		
+		Es la discretización centrada de \(\mu=-b+\sigma^2\partial_x\log C\) en la arista.
+	\end{definicion}
+	
+	\begin{lema}[Invariancia del cono]\label{lema:cono}
+		Sea \(T\) positivo, conmutante con \(\Sh\), y \(\phi>0\) con \(m\le\phi_{j+1}/\phi_j\le M_0\) para todo \(j\), con \(m>0\). Si \(T\phi>0\), entonces \(m\le(T\phi)_{j+1}/(T\phi)_j\le M_0\).
+	\end{lema}
+	
+	\begin{proof}
+		\((\Sh-mI)\phi\ge0\). Como \(T\) es positivo y conmuta con \(\Sh\): \((\Sh-mI)T\phi=T(\Sh-mI)\phi\ge0\), es decir \((T\phi)_{j+1}\ge m\,(T\phi)_j\). Análogo con \((M_0I-\Sh)\phi\ge0\).
+		
+	\end{proof}
+	
+	\begin{teorema}[Principio del máximo discreto para el drift]\label{teo:max}
+		Bajo (H1)--(H2), sea \(C^0\in\ell^\infty(\Z)\), \(C^0>0\), con \(m\le C^0_{j+1}/C^0_j\le M_0\) (\(m>0\)). Entonces \(C^n>0\) para todo \(n\) y
+		\begin{equation}
+			\inf_j\mu^0_{j+1/2}\ \le\ \mu^n_{j+1/2}\ \le\ \sup_j\mu^0_{j+1/2}\qquad\forall\,j,\ \forall\,n
+		\end{equation}
+		
+		La cota es uniforme en \(h,\Delta s,\sigma\) (siempre que valgan (H1)-(H2)).
+	\end{teorema}
+	
+	\begin{proof}
+		Por el Lema~\ref{lema:pos}, \(C^n=T_\theta^nC^0\in\ell^\infty\) y \(C^n>0\). Tomando \(m:=\inf_jC^0_{j+1}/C^0_j\) y \(M_0:=\sup_jC^0_{j+1}/C^0_j\), el Lema~\ref{lema:cono} aplicado paso a paso da \(m\le C^n_{j+1}/C^n_j\le M_0\) para todo \(n\). Como \(\mu=-b+\frac{\sigma^2}{h}\log(\cdot)\) es creciente en el cociente, se obtiene la cota.
+		
+	\end{proof}
+	
+	\begin{observacion}
+		Con (HY), \(C^0_j=Y(x_j)\) cumple la hipótesis del Teorema~\ref{teo:max} con \(m=e^{-Lh}\) y \(M_0=e^{Lh}\), donde \(L=\sup|\ell'|\). El esquema se estudia entonces para \(Y\) acotada; para datos con crecimiento exponencial \(Y\le Ae^{B|x|}\) haría falta un lema de extensión a un espacio con peso.
+	\end{observacion}
+	
+	\subsection{Hopf--Cole discreto exacto}\label{subsec:hc}
+	\label{sec:HC}
+	
+	Sea \(\theta=0\) y
+	
+	\[
+	\lambda=\frac{\nu\Delta s}{h^2},\quad \kappa=\frac{b\Delta s}{2h},\quad w_{-1}=\lambda+\kappa,\quad w_0=1-2\lambda-r\Delta s,\quad w_{+1}=\lambda-\kappa
+	\]
+	
+	de modo que \(C^{n+1}_j=w_{-1}C^n_{j-1}+w_0C^n_j+w_{+1}C^n_{j+1}\), con pesos \(\ge0\) por (H1)--(H2) (\(\Delta s\le1/(\sigma^2/h^2+r)\)).
+	
+	\begin{teorema}[Burgers discreto equivalente]\label{teo:HC}
+		Sea \(z_{j+1/2}=\log(C_{j+1}/C_j)\) y \(D^n_j=C^{n+1}_j/C^n_j=w_{-1}e^{-z_{j-1/2}}+w_0+w_{+1}e^{z_{j+1/2}}\). Entonces, exactamente
+		
+		\begin{equation}\label{eq:consform}
+			u^{n+1}_{j+1/2}=u^n_{j+1/2}-\frac{\Delta s}{h}\left(F_{j+1}-F_j\right),\qquad F_j=\frac{\sigma^2}{\Delta s}\log D^n_j=F\left(u^n_{j-\frac12},u^n_{j+\frac12}\right)
+		\end{equation}
+		
+		donde, usando \(z=h(b-u)/\sigma^2\),
+		
+		\[
+		F(u_-,u_+)=\frac{\sigma^2}{\Delta s}\log\left(w_{-1}e^{-h(b-u_-)/\sigma^2}+w_0+w_{+1}e^{h(b-u_+)/\sigma^2}\right)
+		\]
+		
+		Es un esquema de tres puntos en forma conservativa, y es equivalente (biyección explícita \(C\leftrightarrow u\) salvo constante multiplicativa) al esquema lineal~\eqref{eq:theta} con \(\theta=0\).
+	\end{teorema}
+	
+	\begin{proof}
+		\(\log C^{n+1}_j=\log C^n_j+\log D^n_j\); restando en \(j+1\) y \(j\): \(z^{n+1}_{j+1/2}=z^n_{j+1/2}+\log D_{j+1}-\log D_j\). Multiplicando por \(-\sigma^2/h\) y usando \(u=b-\sigma^2z/h\) se obtiene~\eqref{eq:consform}.
+		
+		\qedhere
+	\end{proof}
+	
+	\begin{proposicion}[Consistencia]\label{prop:consist}
+		Si \(u\) es suave y \(\Delta s=O(h^2)\),
+		
+		\[
+		F\left(u(x_j-\frac h2),u(x_j+\frac h2)\right)=\frac12u^2-\nu u_x-\frac12b^2-r\sigma^2+O(h^2+\Delta s)\quad\text{en }x_j
+		\]
+		
+		y las constantes se cancelan en \(F_{j+1}-F_j\). Luego~\eqref{eq:consform} aproxima \(u_s+(u^2/2)_x=\nu u_{xx}\) con error de truncación \(O(h^2+\Delta s)\).
+	\end{proposicion}
+	
+	\begin{proof}[Esquema de la demostración]
+		Esto hay que demostrarlo
+		Con \(z_\pm=h(b-u_\pm)/\sigma^2=O(h)\), \(z_+-z_-=-h(u_+-u_-)/\sigma^2\approx-h^2u_x/\sigma^2\) y \(\bar z=\frac12(z_++z_-)\approx h(b-u)/\sigma^2\). Como \(\sum w=1-r\Delta s\),
+		
+		\[
+		D-1=-r\Delta s+w_{-1}(e^{-z_-}-1)+w_{+1}(e^{z_+}-1) =-r\Delta s+\lambda(z_+-z_-)+\lambda\bar z^{\,2}-2\kappa\bar z+O(\Delta s\,h^2)
+		\]
+		
+		donde \(\lambda(z_+-z_-)\approx-\frac12\Delta s\,u_x\), \(\lambda\bar z^{\,2}\approx\Delta s(b-u)^2/(2\sigma^2)\) y \(2\kappa\bar z\approx\Delta s\,b(b-u)/\sigma^2\). Además \(\log D=(D-1)+O(\Delta s^2)\), y multiplicando por \(\sigma^2/\Delta s\) resulta \(-r\sigma^2-\nu u_x+\frac12(b-u)^2-b(b-u)=\frac12u^2-\nu u_x-\frac12b^2-r\sigma^2\). Los restos son funciones suaves de \(x\), por lo que sus diferencias divididas conservan el orden.
+		
+	\end{proof}
+	
+	\begin{corolario}
+		Bajo (HY), (H1)--(H2) y \(\theta=0\), el esquema~\eqref{eq:consform} satisface el principio del máximo del Teo.~\ref{teo:max} y converge con el orden de la teoría lineal (Teo.~\ref{teo:error}).
+	\end{corolario}
+	
+	\begin{proof}
+		Por el Teorema~\ref{teo:HC}, el drift discreto \(\mu^n\) de~\eqref{eq:driftdisc} calculado con \(C^n\) (esquema lineal con \(\theta=0\)) coincide con el de~\eqref{eq:consform}. Con (HY), \(C^0_j=Y(x_j)\) cumple las hipótesis del Teorema~\ref{teo:max} (Observación anterior), lo que da el principio del máximo, y el Teorema~\ref{teo:error}(ii) da la tasa \(O(h^2+\Delta s)\).
+	\end{proof}
+
+	
+	\subsection{Estimación de error para el drift}\label{subsec:error}
+	\label{sec:error}
+	
+	\begin{teorema}[Error del esquema lineal y del drift]\label{teo:error}
+		Supongamos (H1)--(H2), \(Y\in C^\infty_b\) y sea \(C\) la solución de~\eqref{eq:BSs}; sus derivadas \(\partial_x^kC\) (\(k\le7\)) son acotadas en \(\R\times[0,T]\): como \(Y\in C_b^\infty\), se puede derivar bajo la esperanza, \(\partial_x^kC(x,s)=e^{-rs}\,\E\left[Y^{(k)}(x-bs+\sigma\sqrt{s}\,Z)\right]\), luego \(|\partial_x^kC|\le\norm{Y^{(k)}}_\infty\) en \(\R\times[0,T]\) (cotas válidas hasta \(s=0\)). Sea \(p=2\) si \(\theta=\frac12\) y \(p=1\) en otro caso. Existe una constante \(K_1\), que depende solo de \(\nu,|b|,r,T\) y de cotas de derivadas de \(C\), tal que
+		
+		\begin{enumerate}[label=(\roman*)]
+			\item \(\displaystyle\max_{n\Delta s\le T}\ \left(\norm{C^n-C(\cdot,s_n)}_\infty+\norm{\delta C^n-\delta C(\cdot,s_n)}_\infty\right)\le K_1\,(h^2+\Delta s^{p})\), con \((\delta\phi)_j=(\phi_{j+1}-\phi_j)/h\);
+			\item si \(C(x_j,s_n)\ge c_0>0\), \(C(x_{j+1},s_n)\ge c_0\) y \(K_1(h^2+\Delta s^p)\le\min\{c_0/4,\ \norm{C_x}_\infty\}\), entonces
+			
+			\[
+			\left|\mu^n_{j+\frac12}-\mu(x_{j+\frac12},s_n)\right|\le\sigma^2\left[\frac{2}{c_0}+\frac{8\norm{C_x}_\infty}{c_0^2}\right]K_1(h^2+\Delta s^p)+\frac{\sigma^2h^2}{24}\sup_{[x_j,x_{j+1}]}\left|\partial_x^3\log C\right|
+			\]
+		\end{enumerate}
+	\end{teorema}
+	
+	\begin{proof}
+		\emph{(i) Error lineal.} Sea \(\phi\) una solución suave de la EDP~\eqref{eq:BSs} y \(\phi^n_j=\phi(x_j,s_n)\), \(\tau^n=\frac{\phi^{n+1}-\phi^n}{\Delta s}-\theta L_h\phi^{n+1}-(1-\theta)L_h\phi^n\). Desarrollando en torno a \(s_{n+1/2}\):
+		
+		\[
+		\frac{\phi^{n+1}-\phi^n}{\Delta s}=\phi_s^{n+1/2}+O(\Delta s^2\phi_{sss}),\quad \theta L_h\phi^{n+1}+(1-\theta)L_h\phi^n=L_h\phi^{n+1/2}+(\theta-\frac12)\Delta s\,L_h\phi_s^{n+1/2}+O(\Delta s^2)
+		\]
+		
+		y \(L_h\phi-L\phi=\frac{\nu h^2}{12}\phi_{xxxx}-\frac{bh^2}{6}\phi_{xxx}+\dots\) Luego \(\norm{\tau^n}_\infty\le K\left(h^2+|\theta-\frac12|\Delta s+\Delta s^2\right)\le K'(h^2+\Delta s^p)\), con derivadas temporales reescritas con \(\phi_s=L\phi\). Con \(e^n=\phi^n-C^n\) (y \(e^0=0\)): \(\mathcal Ae^{n+1}=Pe^n+\Delta s\,\tau^n\), es decir \(e^{n+1}=T_\theta e^n+\Delta s\,\mathcal A^{-1}\tau^n\). Por el Lema~\ref{lema:pos}, \(\norm{e^{n+1}}\le\norm{e^n}+\Delta s\norm{\tau^n}\) y \(\norm{e^n}\le s_n\sup\norm{\tau}\).
+		
+		Como \(\delta=(\Sh-I)/h\) conmuta con \(T_\theta\), \(\delta C^n\) resuelve el mismo esquema con dato \(\delta Y\). Por otra parte, \(D(x,s)=\frac{C(x+h,s)-C(x,s)}{h}\) es \emph{también} solución exacta de~\eqref{eq:BSs} (coeficientes constantes) con \(\norm{\partial^k_xD}\le\norm{\partial_x^{k+1}C}\) y \(D(x_j,s_n)=(\delta C(\cdot,s_n))_j\). Aplicando lo anterior a \(\phi=D\) se obtiene la segunda parte de (i).
+		
+		\emph{(ii) Del error de \(C\) al error del drift.} Sea \(\psi(D,C)=\frac1h\log\left(1+\frac{hD}{C}\right)=\frac1h\left[\log(C+hD)-\log C\right]\), de modo que \(\mu=-b+\sigma^2\psi(\delta C,C)\) en nodos. Entonces
+		
+		\[
+		\partial_D\psi=\frac{1}{C+hD}=\frac1{C_{j+1}},\qquad \partial_C\psi=\frac1h\left(\frac1{C+hD}-\frac1C\right)=-\frac{D}{C\,(C+hD)}
+		\]
+		
+		Si \(K_1(h^2+\Delta s^p)\le c_0/4\), tanto \(C(x_j,s_n)\) como \(C(x_{j+1},s_n)\) y sus aproximaciones numéricas son \(\ge c_0/2\) (también sobre el segmento que los une, porque \(C\) y \(C+hD\) son funciones lineales en \((C,D)\)), y \(|D|\le2\norm{C_x}\) basta tomando \(K_1(h^2+\Delta s^p)\le\norm{C_x}\). El teorema del valor medio da \(|\psi(\delta C^n,C^n)-\psi(\delta C,C)|\le\frac2{c_0}E_D+\frac{8\norm{C_x}}{c_0^2}E_C\) con \(E_C,E_D\le K_1(h^2+\Delta s^p)\), es decir \(\le\left[\frac2{c_0}+\frac{8\norm{C_x}}{c_0^2}\right]K_1(h^2+\Delta s^p)\). Finalmente, con \(w=\log C\), \(\frac{w(x+\frac h2)-w(x-\frac h2)}{h}-w'(x)=\frac{h^2}{24}w'''(\xi)\), y \(\mu=-b+\sigma^2w_x\), de modo que
+		\[
+		\mu^n_{j+\frac12}-\mu(x_{j+\frac12},s_n)=\sigma^2\left[\psi(\delta C^n,C^n)-\psi(\delta C,C)\right]+\sigma^2\left[\psi(\delta C,C)-w_x\right]
+		\]
+		y multiplicando la primera cota por \(\sigma^2\) y sumando el término de \(h^2/24\) se obtiene (ii).
+		
+	\end{proof}
+	
+	
+	\subsection{Límite de pequeña volatilidad, rango dinámico y resolución}
+	
+	Con \(Y_\sigma=e^{-g/\sigma^2}\), \(J^\sigma:=-\sigma^2\log\varphi\) resuelve la HJ viscosa \(J_s+\frac12J_y^2=\nu J_{yy}\) y \(\tilde u=J^\sigma_y\). En efecto, con \(\varphi=e^{-J/\sigma^2}\): \(\varphi_s=-\varphi J_s/\sigma^2\) y \(\varphi_{yy}=\varphi(J_y^2/\sigma^4-J_{yy}/\sigma^2)\), y \(\varphi_s=\nu\varphi_{yy}\) da \(J_s+\frac12J_y^2=\frac12\sigma^2J_{yy}\). El límite formal es la fórmula de Hopf--Lax
+	
+	\begin{equation}\label{eq:HL}
+		J^0(y,s)=\min_{z\in\R}\left\{g(z)+\frac{(y-z)^2}{2s}\right\},\qquad \tilde u^0=J^0_y\ \ \text{(solución entrópica de Burgers)}
+	\end{equation}
+	
+	\begin{teorema}[Resultados clásicos, citados]\label{teo:cl}
+		(a) Si \(g\) es Lipschitz y acotada, \(\norm{J^\sigma-J^0}_{\infty}\le C\sigma\) (Crandall--Lions, tasa \(\sqrt{\nu}\)). Para el Hamiltoniano puramente cuadrático, como es el caso de la HJ de arriba, esta tasa se mejora a \(O(\nu|\log\nu|)\), y es óptima, cuando el dato terminal es globalmente Lipschitz~\cite[Teoremas~1.1 y~1.2]{ChaintronDaudin2025}; la tasa \(O(\varepsilon|\log\varepsilon|)\) se extiende a Hamiltonianos uniformemente convexos~\cite{CirantGoffi2025,Goffi2024}. (b) Si \(\tilde u_0\in BV\), \(\norm{\tilde u^\sigma(s)-\tilde u^0(s)}_{L^1}\le C\,|\tilde u_0|_{BV}\,\sigma\sqrt{s}\) (Kuznetsov).
+	\end{teorema}
+	
+	\begin{proof}
+		
+	\end{proof}
+	
+	\begin{corolario}[Esquema en variables logarítmicas]\label{cor:lse}
+		La recursión del Teo.~\ref{teo:HC} usa solo diferencias \(z\) y evita exponenciar \(C\)
+		
+		\[
+		q^{n+1}_j=q^n_j+\log D^n_j,\qquad \log D^n_j=\LSE\!\left(\log w_{-1}-z^n_{j-\frac12},\ \log w_0,\ \log w_{+1}+z^n_{j+\frac12}\right),
+		\]
+		
+		con \(q^n_j=\log C^n_j\), \(\LSE(a_1,a_2,a_3)=\max_ia_i+\log\sum_ie^{a_i-\max a}\) y \(z^0_{j+1/2}=\log Y(x_{j+1})-\log Y(x_j)\) calculado desde \(\log Y\), con \(Y\) que cumple (HY). Requiere \(w_{\pm1},w_0>0\).
+	\end{corolario}
+	
 	\section{Experimentos computacionales}\label{sec:experimentos}
 	
-	\ph{Explicar qué se calculó o verificó con computadora, con qué herramienta
-		y para qué rango de valores. Si el proyecto no incluye cálculos, eliminar
-		esta sección.}
+	\ph{Explicar qué se calculó o verificó con computadora, con qué herramienta y para qué rango de valores. Si el proyecto no incluye cálculos, eliminar esta sección.}
 	
 	\begin{lstlisting}
 		# Escribir aqui el codigo usado (Python, SageMath, etc.)
 	\end{lstlisting}
 	
-	\ph{Explicar los resultados obtenidos y qué conclusión se saca de ellos, en
-		relación con la \cref{tab:resultados}.}
+	\ph{Explicar los resultados obtenidos y qué conclusión se saca de ellos, en relación con la \cref{tab:resultados}.}
 	
 	\begin{table}[ht]
 		\centering
@@ -217,14 +580,11 @@
 		\caption{\ph{Descripción de los datos mostrados.}}\label{tab:resultados}
 	\end{table}
 	
-	% ---------------------------------------------------------------------
 	\section{Estado del proyecto y trabajo restante}\label{sec:estado}
 	
 	\subsection{Resumen del avance}
 	
-	\ph{Introducir brevemente la tabla: a qué fecha corresponde y qué se ha
-		logrado.} Los estados posibles son \done, \wip\ y \todo. La
-	\cref{tab:estado} indica el responsable de cada objetivo.
+	\ph{Introducir brevemente la tabla: a qué fecha corresponde y qué se ha logrado.} Los estados posibles son \done, \wip\ y \todo. La \cref{tab:estado} indica el responsable de cada objetivo.
 	
 	\begin{table}[ht]
 		\centering
@@ -245,8 +605,8 @@
 	
 	\subsection{Trabajo en curso}
 	
-	\ph{Describir en qué se está trabajando ahora: qué se quiere demostrar o
-		construir y hasta dónde se ha llegado.}
+	\ph{Describir en qué se está trabajando ahora: qué se quiere demostrar o construir y hasta dónde se ha llegado.}
+	
 	\begin{equation}\label{eq:pendiente}
 		\ph{fórmula o resultado que se quiere probar}
 	\end{equation}
@@ -272,14 +632,19 @@
 		\item \ph{Redacción del informe final y presentación} \hfill \emph{(\ph{semanas 4--6})}
 	\end{enumerate}
 	
-	% ---------------------------------------------------------------------
-	\begin{thebibliography}{9}
-		
+	\clearpage
+	
+	\begin{thebibliography}{99}\small
 		\bibitem{Lindgren2020} J. Lindgren, ``Efficient Markets and Contingent Claims Valuation: An Information Theoretic Approach,'' \emph{Entropy}, vol. 22, no. 11, art. 1283, Nov. 2020, doi: 10.3390/e22111283.
 		
-		\bibitem{Ref2}
-		\ph{Autor(es), \emph{Título del artículo}, revista \textbf{volumen} (año), páginas.}
+		\bibitem{ChaintronDaudin2025}
+		L.-P. Chaintron, S. Daudin, ``Optimal rate of convergence in the vanishing viscosity for quadratic Hamilton--Jacobi equations,'' \emph{arXiv preprint}, arXiv:2502.09103 [math.AP], 2025, doi: \url{https://doi.org/10.48550/arXiv.2502.09103}.
 		
+		\bibitem{CirantGoffi2025}
+		M. Cirant, A. Goffi, ``Convergence rates for the vanishing viscosity approximation of Hamilton--Jacobi equations: the convex case,'' \emph{arXiv preprint}, arXiv:2502.15495 [math.AP], 2025, doi: \url{https://doi.org/10.48550/arXiv.2502.15495}.
+		
+		\bibitem{Goffi2024}
+		A. Goffi, ``Remarks on the rate of convergence of the vanishing viscosity process of Hamilton--Jacobi equations,'' \emph{arXiv preprint}, arXiv:2412.15651 [math.AP], 2024, doi: \url{https://doi.org/10.48550/arXiv.2412.15651}.
 	\end{thebibliography}
 	
 \end{document}

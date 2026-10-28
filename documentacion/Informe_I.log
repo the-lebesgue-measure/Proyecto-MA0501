@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.25.7 (MiKTeX 26.5) (format=lualatex 2026.10.23)  27 OCT 2026 00:02
+This is LuaHBTeX, Version 1.25.7 (MiKTeX 26.5) (format=lualatex 2026.10.23)  28 OCT 2026 12:15
  restricted system commands enabled.
 **Informe_I.tex
 (./Informe_I.tex
@@ -549,145 +549,126 @@ LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 ne 14.
 
 Package fontspec Info: 
-(fontspec)             Could not resolve font "Latin Modern Math/B" (it
-(fontspec)             probably doesn't exist).
+(fontspec)             Could not resolve font "NewCMMath-Book/B" (it probably
+(fontspec)             doesn't exist).
 
 
 Package fontspec Info: 
-(fontspec)             Font family 'LatinModernMath(0)' created for font
-(fontspec)             'Latin Modern Math' with options
+(fontspec)             Font family 'NewCMMath-Book(0)' created for font
+(fontspec)             'NewCMMath-Book' with options
 (fontspec)             [Renderer=Basic,BoldItalicFont={},ItalicFont={},SmallCap
 sFont={},Script=Math,RawFeature={mathfontdimen=xetex}].
 (fontspec)              
 (fontspec)              This font family consists of the following NFSS
 (fontspec)             series/shapes:
 (fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"name:Latin Modern
-(fontspec)             Math:mode=base;script=math;language=dflt;mathfontdimen=x
-etex;"
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"name:NewCMMath-Book:mode=base;script=math;language=d
+flt;mathfontdimen=xetex;"
 
 
 Package fontspec Info: 
-(fontspec)             Could not resolve font "Latin Modern Math/B" (it
-(fontspec)             probably doesn't exist).
+(fontspec)             Could not resolve font "NewCMMath-Book/B" (it probably
+(fontspec)             doesn't exist).
 
 
 Package fontspec Info: 
-(fontspec)             Font family 'LatinModernMath(1)' created for font
-(fontspec)             'Latin Modern Math' with options
+(fontspec)             Font family 'NewCMMath-Book(1)' created for font
+(fontspec)             'NewCMMath-Book' with options
 (fontspec)             [Renderer=Basic,BoldItalicFont={},ItalicFont={},SmallCap
-sFont={},Script=Math,SizeFeatures={{Size=9.3075-},{Size=6.57-9.3075,Font=Latin
-(fontspec)             Modern Math,Style=MathScript},{Size=-6.57,Font=Latin
-(fontspec)             Modern
-(fontspec)             Math,Style=MathScriptScript}},RawFeature={mathfontdimen=
-xetex}].
+sFont={},Script=Math,SizeFeatures={{Size=9.3075-},{Size=6.57-9.3075,Font=NewCMM
+ath-Book,Style=MathScript},{Size=-6.57,Font=NewCMMath-Book,Style=MathScriptScri
+pt}},RawFeature={mathfontdimen=xetex}].
 (fontspec)              
 (fontspec)              This font family consists of the following NFSS
 (fontspec)             series/shapes:
 (fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.: <9.3075->"name:Latin
-(fontspec)             Modern
-(fontspec)             Math:mode=base;script=math;language=dflt;mathfontdimen=x
-etex;"<6.57-9.3075>"name:Latin
-(fontspec)             Modern
-(fontspec)             Math:mode=base;script=math;language=dflt;mathfontdimen=x
-etex;+ssty=0;"<-6.57>"name:Latin
-(fontspec)             Modern
-(fontspec)             Math:mode=base;script=math;language=dflt;mathfontdimen=x
-etex;+ssty=1;"
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <9.3075->"name:NewCMMath-Book:mode=base;script=math;lang
+uage=dflt;mathfontdimen=xetex;"<6.57-9.3075>"name:NewCMMath-Book:mode=base;scri
+pt=math;language=dflt;mathfontdimen=xetex;+ssty=0;"<-6.57>"name:NewCMMath-Book:
+mode=base;script=math;language=dflt;mathfontdimen=xetex;+ssty=1;"
 
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
 (Font)              `operators' in the math version `normal' on input line 15.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/LatinModernMath(1)/m/n on input line
- 15.
+(Font)                  OT1/cmr/m/n --> TU/NewCMMath-Book(1)/m/n on input line 
+15.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
 (Font)              `operators' in the math version `bold' on input line 15.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/LatinModernMath(1)/b/n on input lin
-e 15.
+(Font)                  OT1/cmr/bx/n --> TU/NewCMMath-Book(1)/b/n on input line
+ 15.
 
 Package fontspec Info: 
-(fontspec)             Could not resolve font "Latin Modern Math/B" (it
-(fontspec)             probably doesn't exist).
+(fontspec)             Could not resolve font "NewCMMath-Book/B" (it probably
+(fontspec)             doesn't exist).
 
 
 Package fontspec Info: 
-(fontspec)             Font family 'LatinModernMath(2)' created for font
-(fontspec)             'Latin Modern Math' with options
+(fontspec)             Font family 'NewCMMath-Book(2)' created for font
+(fontspec)             'NewCMMath-Book' with options
 (fontspec)             [Renderer=Basic,BoldItalicFont={},ItalicFont={},SmallCap
-sFont={},Script=Math,SizeFeatures={{Size=9.3075-},{Size=6.57-9.3075,Font=Latin
-(fontspec)             Modern Math,Style=MathScript},{Size=-6.57,Font=Latin
-(fontspec)             Modern
-(fontspec)             Math,Style=MathScriptScript}},RawFeature={mathfontdimen=
-xetex},RawFeature={mathfontdimen=tex2}].
+sFont={},Script=Math,SizeFeatures={{Size=9.3075-},{Size=6.57-9.3075,Font=NewCMM
+ath-Book,Style=MathScript},{Size=-6.57,Font=NewCMMath-Book,Style=MathScriptScri
+pt}},RawFeature={mathfontdimen=xetex},RawFeature={mathfontdimen=tex2}].
 (fontspec)              
 (fontspec)              This font family consists of the following NFSS
 (fontspec)             series/shapes:
 (fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.: <9.3075->"name:Latin
-(fontspec)             Modern
-(fontspec)             Math:mode=base;script=math;language=dflt;mathfontdimen=x
-etex;mathfontdimen=tex2;"<6.57-9.3075>"name:Latin
-(fontspec)             Modern
-(fontspec)             Math:mode=base;script=math;language=dflt;mathfontdimen=x
-etex;mathfontdimen=tex2;+ssty=0;"<-6.57>"name:Latin
-(fontspec)             Modern
-(fontspec)             Math:mode=base;script=math;language=dflt;mathfontdimen=x
-etex;mathfontdimen=tex2;+ssty=1;"
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <9.3075->"name:NewCMMath-Book:mode=base;script=math;lang
+uage=dflt;mathfontdimen=xetex;mathfontdimen=tex2;"<6.57-9.3075>"name:NewCMMath-
+Book:mode=base;script=math;language=dflt;mathfontdimen=xetex;mathfontdimen=tex2
+;+ssty=0;"<-6.57>"name:NewCMMath-Book:mode=base;script=math;language=dflt;mathf
+ontdimen=xetex;mathfontdimen=tex2;+ssty=1;"
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
 (Font)              `symbols' in the math version `normal' on input line 15.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/cmsy/m/n --> TU/LatinModernMath(2)/m/n on input lin
-e 15.
+(Font)                  OMS/cmsy/m/n --> TU/NewCMMath-Book(2)/m/n on input line
+ 15.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
 (Font)              `symbols' in the math version `bold' on input line 15.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/cmsy/b/n --> TU/LatinModernMath(2)/b/n on input lin
-e 15.
+(Font)                  OMS/cmsy/b/n --> TU/NewCMMath-Book(2)/b/n on input line
+ 15.
 
 Package fontspec Info: 
-(fontspec)             Could not resolve font "Latin Modern Math/B" (it
-(fontspec)             probably doesn't exist).
+(fontspec)             Could not resolve font "NewCMMath-Book/B" (it probably
+(fontspec)             doesn't exist).
 
 
 Package fontspec Info: 
-(fontspec)             Font family 'LatinModernMath(3)' created for font
-(fontspec)             'Latin Modern Math' with options
+(fontspec)             Font family 'NewCMMath-Book(3)' created for font
+(fontspec)             'NewCMMath-Book' with options
 (fontspec)             [Renderer=Basic,BoldItalicFont={},ItalicFont={},SmallCap
-sFont={},Script=Math,SizeFeatures={{Size=9.3075-},{Size=6.57-9.3075,Font=Latin
-(fontspec)             Modern Math,Style=MathScript},{Size=-6.57,Font=Latin
-(fontspec)             Modern
-(fontspec)             Math,Style=MathScriptScript}},RawFeature={mathfontdimen=
-xetex},RawFeature={mathfontdimen=tex3}].
+sFont={},Script=Math,SizeFeatures={{Size=9.3075-},{Size=6.57-9.3075,Font=NewCMM
+ath-Book,Style=MathScript},{Size=-6.57,Font=NewCMMath-Book,Style=MathScriptScri
+pt}},RawFeature={mathfontdimen=xetex},RawFeature={mathfontdimen=tex3}].
 (fontspec)              
 (fontspec)              This font family consists of the following NFSS
 (fontspec)             series/shapes:
 (fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.: <9.3075->"name:Latin
-(fontspec)             Modern
-(fontspec)             Math:mode=base;script=math;language=dflt;mathfontdimen=x
-etex;mathfontdimen=tex3;"<6.57-9.3075>"name:Latin
-(fontspec)             Modern
-(fontspec)             Math:mode=base;script=math;language=dflt;mathfontdimen=x
-etex;mathfontdimen=tex3;+ssty=0;"<-6.57>"name:Latin
-(fontspec)             Modern
-(fontspec)             Math:mode=base;script=math;language=dflt;mathfontdimen=x
-etex;mathfontdimen=tex3;+ssty=1;"
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <9.3075->"name:NewCMMath-Book:mode=base;script=math;lang
+uage=dflt;mathfontdimen=xetex;mathfontdimen=tex3;"<6.57-9.3075>"name:NewCMMath-
+Book:mode=base;script=math;language=dflt;mathfontdimen=xetex;mathfontdimen=tex3
+;+ssty=0;"<-6.57>"name:NewCMMath-Book:mode=base;script=math;language=dflt;mathf
+ontdimen=xetex;mathfontdimen=tex3;+ssty=1;"
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
 (Font)              `largesymbols' in the math version `normal' on input line 1
 5.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/cmex/m/n --> TU/LatinModernMath(3)/m/n on input lin
-e 15.
+(Font)                  OMX/cmex/m/n --> TU/NewCMMath-Book(3)/m/n on input line
+ 15.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
 (Font)              `largesymbols' in the math version `bold' on input line 15.
 
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/cmex/m/n --> TU/LatinModernMath(3)/b/n on input lin
-e 15.
+(Font)                  OMX/cmex/m/n --> TU/NewCMMath-Book(3)/b/n on input line
+ 15.
 
 (C:/Users/antho/AppData/Local/Programs/MiKTeX/tex/latex/polyglossia/polyglossia
 .sty
@@ -1036,38 +1017,33 @@ Package cleveref Info: always capitalise cross-reference names on input line 78
 )
 ==> First Aid for cleveref.sty applied!
 \c@theorem=\count346
-(./Informe_I.aux
-
-LaTeX Warning: Label `sec:sigma0' multiply defined.
-
-
-LaTeX Warning: Label `sec:sigma0@cref' multiply defined.
-
-)
+(./Informe_I.aux)
 \openout1 = Informe_I.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
- (C:/Users/antho/AppData/Local/Programs/MiKTeX/tex/latex/graphics/graphicx.sty
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+
+(C:/Users/antho/AppData/Local/Programs/MiKTeX/tex/latex/graphics/graphicx.sty
 Package: graphicx 2026-05-17 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+
 (C:/Users/antho/AppData/Local/Programs/MiKTeX/tex/latex/graphics/graphics.sty
 Package: graphics 2026-05-17 v1.4h Standard LaTeX Graphics (DPC,SPQR)
 
@@ -1084,13 +1060,13 @@ Package graphics Info: Driver file: luatex.def on input line 106.
 \Gin@req@width=\dimen262
 )
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 91.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 112.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 91.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 112.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 91.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 112.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 91.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 112.
 
 
 Package unicode-math Warning: Using \overbracket and \underbracket from
@@ -1144,13 +1120,13 @@ Package unicode-math Warning: I'm going to overwrite the following commands
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \microtypecontext on input line 91.
-Package microtype Info: Applying patch `item' on input line 91.
-Package microtype Info: Applying patch `toc' on input line 91.
-Package microtype Info: Applying patch `eqnum' on input line 91.
-Package microtype Info: Applying patch `footnote' on input line 91.
-Package microtype Info: Applying patch `verbatim' on input line 91.
-LaTeX Info: Redefining \microtypesetup on input line 91.
+LaTeX Info: Redefining \microtypecontext on input line 112.
+Package microtype Info: Applying patch `item' on input line 112.
+Package microtype Info: Applying patch `toc' on input line 112.
+Package microtype Info: Applying patch `eqnum' on input line 112.
+Package microtype Info: Applying patch `footnote' on input line 112.
+Package microtype Info: Applying patch `verbatim' on input line 112.
+LaTeX Info: Redefining \microtypesetup on input line 112.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1193,7 +1169,7 @@ fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 \c@lstlisting=\count353
-Package hyperref Info: Link coloring ON on input line 91.
+Package hyperref Info: Link coloring ON on input line 112.
  (./Informe_I.out) (./Informe_I.out)
 \@outlinefile=\write3
 
@@ -1202,106 +1178,75 @@ Package hyperref Info: Link coloring ON on input line 91.
 Package polyglossia Info: totalhyphenmin:'5'
 
 Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `LatinModernMath' (encoding: TU).
+(microtype)             `NewCMMath-Book' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-
-
-LaTeX Warning: Citation `Ref1' on page 1 undefined on input line 115.
-
-
-LaTeX Warning: Reference `sec:experimentos' on page 1 undefined on input line 1
-27.
-
-
-LaTeX Warning: Reference `sec:estado' on page 1 undefined on input line 128.
-
-[1
+ [1
 
 {C:/Users/antho/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+Overfull \hbox (49.82367pt too wide) in paragraph at lines 183--185
+[]\TU/LatinModernRoman(0)/m/n/10.95 Por Cauchy--Schwarz, $[][] \TU/NewCMMath-Bo
+ok(1)/m/n/10.95 |𝜇[]| 𝑑𝑢 ≤ [] [][]$\TU/LatinModernRoman(0)/m/n/10.95
+ , y por Jen-sen $\TU/NewCMMath-Book(1)/m/n/10.95 𝔼 [] ≤ [][]$\TU/LatinMod
+ernRoman(0)/m/n/10.95 .
+ []
 
-LaTeX Warning: Reference `thm:principal1' on page 1 undefined on input line 169
-.
+[2] [3] [4] [5] [6] [7]
+Overfull \hbox (13.59659pt too wide) detected at line 511
+[] \TU/NewCMMath-Book(1)/m/n/10.95 = 𝜙[] + 𝑂(Δ𝑠[]𝜙[]),  𝜃𝐿[]
+𝜙[] + (1 − 𝜃)𝐿[]𝜙[] = 𝐿[]𝜙[] + (𝜃 − [])Δ𝑠 𝐿[]
+𝜙[] + 𝑂(Δ𝑠[])
+ []
 
+[8] [9] [10] [11
 
-LaTeX Warning: Reference `lem:previo' on page 1 undefined on input line 171.
-
-
-LaTeX Warning: Reference `thm:principal2' on page 1 undefined on input line 182
-.
-
-
-LaTeX Warning: Reference `lem:auxiliar' on page 1 undefined on input line 183.
-
-
-LaTeX Warning: Reference `tab:resultados' on page 1 undefined on input line 203
-.
-
-
-LaTeX Warning: Reference `tab:estado' on page 1 undefined on input line 227.
-
-[2] [3] (./Informe_I.aux)
+] (./Informe_I.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-09-09>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
-
-Package rerunfilecheck Warning: File `Informe_I.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Informe_I.out':
-(rerunfilecheck)             Before: D123E5DF84134F8DC2C0C29BEA14AC88;2153
-(rerunfilecheck)             After:  B025EB648478D9CCA466BED98249EB67;1693.
+Package rerunfilecheck Info: File `Informe_I.out' has not changed.
+(rerunfilecheck)             Checksum: F757F40767404D918F4DD053DCB3E04F;3154.
 )
 
 Here is how much of LuaTeX's memory you used:
- 24410 strings out of 475604
+ 24537 strings out of 475604
  125240,1648299 words of node,token memory allocated
- 667 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 1 local_par, 8 glue, 5 kern, 1 penalty, 3 glyph, 17
- attribute, 64 glue_spec, 17 attribute_list, 1 write nodes
-   avail lists: 2:1582,3:353,4:327,5:469,6:67,7:6473,8:17,9:689,10:6,11:770
- 46951 multiletter control sequences out of 65536+600000
- 98 fonts using 28925551 bytes
- 71i,12n,93p,1005b,781s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 925 words of node memory still in use:
+   8 hlist, 2 vlist, 2 rule, 1 local_par, 8 glue, 5 kern, 1 penalty, 3 glyph, 76
+ attribute, 63 glue_spec, 76 attribute_list, 1 write, 3 pdf_action nodes
+   avail lists: 1:1,2:1474,3:413,4:289,5:752,6:72,7:6960,8:76,9:1354,10:9,11:687
 
-warning  (pdf backend): unreferenced destination with name 'subsection.3.5'
+ 47037 multiletter control sequences out of 65536+600000
+ 115 fonts using 55504727 bytes
+ 71i,13n,93p,1005b,829s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/antho/AppData/Local/Programs/MiKTeX/fonts/opentype/public/lm/lmmono10-
+regular.otf><c:/users/antho/appdata/local/programs/miktex/fonts/opentype/public/
+lm/lmmono10-italic.otf><c:/users/antho/appdata/local/programs/miktex/fonts/opent
+ype/public/lm/lmroman8-regular.otf><c:/users/antho/appdata/local/programs/miktex
+/fonts/opentype/public/lm/lmroman10-bold.otf><C:/Users/antho/AppData/Local/Progr
+ams/MiKTeX/fonts/opentype/public/newcomputermodern/newcmmath-book.otf><c:/users/
+antho/appdata/local/programs/miktex/fonts/opentype/public/lm/lmmono9-regular.otf
+><c:/users/antho/appdata/local/programs/miktex/fonts/opentype/public/lm/lmroman9
+-regular.otf><c:/users/antho/appdata/local/programs/miktex/fonts/opentype/public
+/lm/lmroman6-regular.otf><c:/users/antho/appdata/local/programs/miktex/fonts/ope
+ntype/public/lm/lmroman10-italic.otf><c:/users/antho/appdata/local/programs/mikt
+ex/fonts/opentype/public/lm/lmroman10-regular.otf><C:/Users/antho/AppData/Local/
+Programs/MiKTeX/fonts/opentype/public/newcomputermodern/newcmmath-book.otf><C:/U
+sers/antho/AppData/Local/Programs/MiKTeX/fonts/opentype/public/newcomputermodern
+/newcmmath-book.otf><c:/users/antho/appdata/local/programs/miktex/fonts/opentype
+/public/lm/lmroman10-regular.otf><c:/users/antho/appdata/local/programs/miktex/f
+onts/opentype/public/lm/lmroman10-bold.otf><c:/users/antho/appdata/local/program
+s/miktex/fonts/opentype/public/lm/lmroman8-regular.otf><c:/users/antho/appdata/l
+ocal/programs/miktex/fonts/opentype/public/lm/lmroman12-regular.otf><c:/users/an
+tho/appdata/local/programs/miktex/fonts/opentype/public/lm/lmroman12-bold.otf>
+Output written on Informe_I.pdf (11 pages, 193824 bytes).
 
-warning  (pdf backend): unreferenced destination with name 'subsection.3.4'
-
-warning  (pdf backend): unreferenced destination with name 'subsection.3.3'
-
-warning  (pdf backend): unreferenced destination with name 'subsection.3.2'
-
-warning  (pdf backend): unreferenced destination with name 'subsection.3.1'
-<c:/users/antho/appdata/local/programs/miktex/fonts/opentype/public/lm/lmmono10-
-italic.otf><c:/users/antho/appdata/local/programs/miktex/fonts/opentype/public/l
-m/lmmono9-regular.otf><c:/users/antho/appdata/local/programs/miktex/fonts/openty
-pe/public/lm/lmroman9-regular.otf><c:/users/antho/appdata/local/programs/miktex/
-fonts/opentype/public/lm/lmroman6-regular.otf><c:/users/antho/appdata/local/prog
-rams/miktex/fonts/opentype/public/lm/lmroman12-bold.otf><c:/users/antho/appdata/
-local/programs/miktex/fonts/opentype/public/lm/lmroman10-regular.otf><c:/users/a
-ntho/appdata/local/programs/miktex/fonts/opentype/public/lm/lmroman10-italic.otf
-><c:/users/antho/appdata/local/programs/miktex/fonts/opentype/public/lm/lmroman1
-0-bold.otf><c:/users/antho/appdata/local/programs/miktex/fonts/opentype/public/l
-m/lmroman8-regular.otf><c:/users/antho/appdata/local/programs/miktex/fonts/opent
-ype/public/lm/lmroman12-regular.otf><c:/users/antho/appdata/local/programs/mikte
-x/fonts/opentype/public/lm/lmroman10-bolditalic.otf>
-Output written on Informe_I.pdf (3 pages, 76444 bytes).
-
-PDF statistics: 171 PDF objects out of 1000 (max. 8388607)
- 42 named destinations out of 1000 (max. 1048576)
- 81 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 365 PDF objects out of 1000 (max. 8388607)
+ 83 named destinations out of 1000 (max. 1048576)
+ 129 words of extra memory for PDF output out of 10000 (max. 100000000)
 
