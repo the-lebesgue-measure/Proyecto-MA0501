@@ -139,9 +139,7 @@
 	
 	\(\tau\in[0,T]\) es el tiempo calendario, \(s:=T-\tau\) el tiempo hasta el vencimiento, \(x=\log S\) el log-precio. El \emph{payoff} \(Y:\R\to[0,\infty)\) es medible, no nulo en un conjunto de medida positiva, con \(Y(x)\le Ae^{B|x|}\).
 	
-	Para las Secciones~\ref{subsec:burgers}--\ref{subsec:error} (donde aparecen \(g=-\log Y\), \(u_0=b-\sigma^2Y'/Y\) y cocientes \(C^0_{j+1}/C^0_j\)) se supone además
-	
-	(HY) \(Y\in C^3(\R)\), \(Y>0\), \(Y\) acotada y \(\ell:=\log Y\) tiene \(\ell',\ell'',\ell'''\) acotadas. Un payoff tipo call, que se anula en una región, no cumple (HY); se puede regularizar con \(Y_\varepsilon=Y+\varepsilon\).
+	Para las Secciones~\ref{subsec:burgers}-\ref{subsec:error} (donde aparecen \(g=-\log Y\), \(u_0=b-\sigma^2Y'/Y\) y cocientes \(C^0_{j+1}/C^0_j\)) se supone además (HY) \(Y\in C^3(\R)\), \(Y>0\), \(Y\) acotada y \(\ell:=\log Y\) tiene \(\ell',\ell'',\ell'''\) acotadas. Un payoff tipo call, que se anula en una región, no cumple (HY); se puede regularizar con \(Y_\varepsilon=Y+\varepsilon\).
 	
 	\subsection{Problema de control de Lindgren y linealización}
 	
@@ -180,18 +178,18 @@
 		|X_t|\le |x|+\int_\tau^t|\mu_u|\,du+\sigma|W_t-W_\tau|
 		\]
 		
-		Por Cauchy--Schwarz, \(\int_\tau^t|\mu_u|\,du\le\sqrt{T} \left(\int_\tau^T\mu_u^2\,du\right)^{1/2}\), y por Jensen \(\E\left[\left(\int_\tau^T\mu_u^2\,du\right)^{1/2}\right]\le \left(\E\left[\int_\tau^T\mu_u^2\,du\right]\right)^{1/2}\). Además
-		\(\E[|W_t-W_\tau|]\le\sqrt{T}\). Luego
+		Por Cauchy--Schwarz, \(\int_\tau^t|\mu_u|\,du\le\sqrt{T} \left(\int_\tau^T\mu_u^2\,du\right)^{1/2}\), y por Jensen 
+		\[
+		\E\left[\left(\int_\tau^T\mu_u^2\,du\right)^{1/2}\right]\le \left(\E\left[\int_\tau^T\mu_u^2\,du\right]\right)^{1/2}
+		\]
+		
+		Además \(\E[|W_t-W_\tau|]\le\sqrt{T}\). Luego
 		\[
 		\sup_{t\in[\tau,T]}\E[|X_t|]\le |x|+\sqrt{T}\left(\E\left[\int_\tau^T\mu_u^2\,du\right]\right)^{1/2}+\sigma\sqrt{T}<\infty,
 		\qquad
 		\E[|J(X_t,t)|]\le M_J+K\,\E[|X_t|]<\infty
 		\]
-		es decir, \(J(X_t,t)\) es integrable (y también \(g(X_T)=J(X_T,T)\)).
-		Además \(\E\left[\int_\tau^T|I(\mu_t)|\,dt\right]<\infty\), pues \(I\) es cuadrática y
-		\(\E\left[\int\mu_t^2\,dt\right]<\infty\).
-		
-		Por otra parte, \(\sigma J_x(X_t,t)\) es continuo, adaptado (todos sus elementos son \(\mathscr{F}_t\)-medibles) y acotado por \(\sigma K\); entonces \(\E\left[\int_\tau^T \sigma^{2} J^{2}_x(X_t,t)\,d t\right]\le\sigma^2K^2T<\infty\), por lo tanto \(\int_\tau^t\sigma J_x(X_u,u)\,dW_u\) es una martingala de cuadrado integrable. Por Itô y \eqref{eq:HJBq}
+		es decir, \(J(X_t,t)\) es integrable (y también \(g(X_T)=J(X_T,T)\)). Además \(\E\left[\int_\tau^T|I(\mu_t)|\,dt\right]<\infty\), pues \(I\) es cuadrática y \(\E\left[\int\mu_t^2\,dt\right]<\infty\). Por otra parte, \(\sigma J_x(X_t,t)\) es continuo, adaptado (todos sus elementos son \(\mathscr{F}_t\)-medibles) y acotado por \(\sigma K\); entonces \(\E\left[\int_\tau^T \sigma^{2} J^{2}_x(X_t,t)\,d t\right]\le\sigma^2K^2T<\infty\), por lo tanto \(\int_\tau^t\sigma J_x(X_u,u)\,dW_u\) es una martingala de cuadrado integrable. Por Itô y \eqref{eq:HJBq}
 		
 		\[
 		\E\left[J(X_T,T)\right]-J(x,\tau)=\E\left[\int_\tau^T\left(J_\tau+\mu_tJ_x+\frac12\sigma^2J_{xx}\right)(X_t,t)\dd t\right] \geq \E\left[\int_\tau^T -I(\mu_t)\,dt\right]

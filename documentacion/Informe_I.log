@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.25.7 (MiKTeX 26.5) (format=lualatex 2026.10.23)  28 OCT 2026 12:15
+This is LuaHBTeX, Version 1.25.7 (MiKTeX 26.5) (format=lualatex 2026.10.23)  28 OCT 2026 12:27
  restricted system commands enabled.
 **Informe_I.tex
 (./Informe_I.tex
@@ -1187,16 +1187,9 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
  [1
 
-{C:/Users/antho/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-Overfull \hbox (49.82367pt too wide) in paragraph at lines 183--185
-[]\TU/LatinModernRoman(0)/m/n/10.95 Por Cauchy--Schwarz, $[][] \TU/NewCMMath-Bo
-ok(1)/m/n/10.95 |𝜇[]| 𝑑𝑢 ≤ [] [][]$\TU/LatinModernRoman(0)/m/n/10.95
- , y por Jen-sen $\TU/NewCMMath-Book(1)/m/n/10.95 𝔼 [] ≤ [][]$\TU/LatinMod
-ernRoman(0)/m/n/10.95 .
- []
-
-[2] [3] [4] [5] [6] [7]
-Overfull \hbox (13.59659pt too wide) detected at line 511
+{C:/Users/antho/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] [3] [4] 
+[5] [6] [7]
+Overfull \hbox (13.59659pt too wide) detected at line 509
 [] \TU/NewCMMath-Book(1)/m/n/10.95 = 𝜙[] + 𝑂(Δ𝑠[]𝜙[]),  𝜃𝐿[]
 𝜙[] + (1 − 𝜃)𝐿[]𝜙[] = 𝐿[]𝜙[] + (𝜃 − [])Δ𝑠 𝐿[]
 𝜙[] + 𝑂(Δ𝑠[])
@@ -1216,14 +1209,14 @@ Package rerunfilecheck Info: File `Informe_I.out' has not changed.
 Here is how much of LuaTeX's memory you used:
  24537 strings out of 475604
  125240,1648299 words of node,token memory allocated
- 925 words of node memory still in use:
-   8 hlist, 2 vlist, 2 rule, 1 local_par, 8 glue, 5 kern, 1 penalty, 3 glyph, 76
- attribute, 63 glue_spec, 76 attribute_list, 1 write, 3 pdf_action nodes
-   avail lists: 1:1,2:1474,3:413,4:289,5:752,6:72,7:6960,8:76,9:1354,10:9,11:687
+ 929 words of node memory still in use:
+   8 hlist, 2 vlist, 2 rule, 1 local_par, 8 glue, 5 kern, 1 penalty, 3 glyph, 77
+ attribute, 63 glue_spec, 77 attribute_list, 1 write, 3 pdf_action nodes
+   avail lists: 1:1,2:1474,3:436,4:289,5:752,6:70,7:6937,8:76,9:1354,10:9,11:687
 
  47037 multiletter control sequences out of 65536+600000
- 115 fonts using 55504727 bytes
- 71i,13n,93p,1005b,829s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 115 fonts using 55505111 bytes
+ 71i,13n,93p,1005b,781s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/antho/AppData/Local/Programs/MiKTeX/fonts/opentype/public/lm/lmmono10-
 regular.otf><c:/users/antho/appdata/local/programs/miktex/fonts/opentype/public/
 lm/lmmono10-italic.otf><c:/users/antho/appdata/local/programs/miktex/fonts/opent
@@ -1244,7 +1237,7 @@ onts/opentype/public/lm/lmroman10-bold.otf><c:/users/antho/appdata/local/program
 s/miktex/fonts/opentype/public/lm/lmroman8-regular.otf><c:/users/antho/appdata/l
 ocal/programs/miktex/fonts/opentype/public/lm/lmroman12-regular.otf><c:/users/an
 tho/appdata/local/programs/miktex/fonts/opentype/public/lm/lmroman12-bold.otf>
-Output written on Informe_I.pdf (11 pages, 193824 bytes).
+Output written on Informe_I.pdf (11 pages, 194052 bytes).
 
 PDF statistics: 365 PDF objects out of 1000 (max. 8388607)
  83 named destinations out of 1000 (max. 1048576)
