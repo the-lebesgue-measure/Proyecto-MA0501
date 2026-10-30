@@ -97,7 +97,7 @@
 %====================================================================
 % DATOS DEL DOCUMENTO
 %====================================================================
-\title{\textbf{Burgers, Hopf--Cole y esquemas numéricos} \\[0.4em]
+\title{\textbf{Burgers viscosa, Hopf--Cole y esquemas de diferencias finitas:\\ influencia de \(h\), \(\Delta s\) y \(\nu\) en el error y la convergencia} \\[0.4em]
 	\large Informe de anteproyecto}
 
 \author{%
@@ -114,14 +114,14 @@
 	\maketitle
 	
 	\begin{abstract}
-		Se estudia la conexión entre control estocástico, Black-Scholes y Burgers mediante una transformación de Hopf-Cole.
+		Se estudia cómo influyen el tamaño de la malla espacial \(h\), el paso temporal \(\Delta s\) y el coeficiente de viscosidad \(\nu\) en el error y en la convergencia de un esquema de diferencias finitas para la ecuación de Burgers viscosa. Para ello se usa la transformación de Hopf--Cole, que reduce Burgers a una ecuación lineal de tipo Black--Scholes (la conexión con el control estocástico de Lindgren aporta el contexto y la motivación).
 	\end{abstract}
 	
 	\medskip
 	
 	%\noindent\textbf{Clasificación MSC 2020:} 65Mxx (primaria); 35Bxx (secundaria).\\
 	
-	\noindent\textbf{Palabras clave:} ecuación de Burgers, transformación de Hopf-Cole, Black-Scholes, esquemas numéricos.
+	\noindent\textbf{Palabras clave:} Black-Scholes, ecuación de Burgers viscosa, transformación de Hopf--Cole, diferencias finitas, error y convergencia, Black--Scholes.
 	
 	\section{Introducción}\label{sec:intro}
 	
@@ -139,7 +139,7 @@
 	
 	\(\tau\in[0,T]\) es el tiempo calendario, \(s:=T-\tau\) el tiempo hasta el vencimiento, \(x=\log S\) el log-precio. El \emph{payoff} \(Y:\R\to[0,\infty)\) es medible, no nulo en un conjunto de medida positiva, con \(Y(x)\le Ae^{B|x|}\).
 	
-	Para las Secciones~\ref{subsec:burgers}-\ref{subsec:error} (donde aparecen \(g=-\log Y\), \(u_0=b-\sigma^2Y'/Y\) y cocientes \(C^0_{j+1}/C^0_j\)) se supone además (HY) \(Y\in C^3(\R)\), \(Y>0\), \(Y\) acotada y \(\ell:=\log Y\) tiene \(\ell',\ell'',\ell'''\) acotadas. Un payoff tipo call, que se anula en una región, no cumple (HY); se puede regularizar con \(Y_\varepsilon=Y+\varepsilon\).
+	Para las Secciones~\ref{subsec:burgers}-\ref{subsec:error} se supone además (HY) \(Y\in C^3(\R)\), \(0  < Y \leq M\) y \(\ell:=\log Y\) tiene \(\ell',\ell'',\ell'''\) acotadas.
 	
 	\subsection{Problema de control de Lindgren y linealización}
 	
@@ -237,7 +237,7 @@
 	
 	\subsection{Ecuación de Burgers para el drift}\label{subsec:burgers}
 	
-	\begin{proposicion}[{\cite[Teorema~1]{Lindgren2020}}]\label{prop:burgers}
+	\begin{proposicion}\label{prop:burgers}
 		Sea \(C>0\) de clase \(C^{3,1}\) solución de~\eqref{eq:BS}. Entonces \(\mu:=-b+\sigma^2\partial_x\log C\) (que coincide con \(\mu^\ast\) de~\eqref{eq:HJBq}) cumple
 		
 		\begin{equation}\label{eq:burgersb}
@@ -294,7 +294,7 @@
 	\end{proposicion}
 	
 	\begin{proof}
-		Sea \(G_{\nu s}(z)=(4\pi\nu s)^{-1/2}e^{-z^2/(4\nu s)}\) el núcleo del calor, de modo que \(\varphi(y,s)=(G_{\nu s}*Y)(y)=\int_{\R} Y(w)G_{\nu s}(y-w)\,dw\) (nótese que \(2\nu=\sigma^2\)). Fíjese \(K=[-R,R]\times[s_0,s_1]\subset\R\times(0,\infty)\). Toda derivada \(\partial_y^a\partial_s^c G_{\nu s}(y-w)\) es un polinomio sobre \((y-w,\,s^{-1})\) por \(G_{\nu s}(y-w)\); por tanto, para \((y,s)\in K\),
+		Sea \(G_{\nu s}(z)=(4\pi\nu s)^{-1/2}e^{-z^2/(4\nu s)}\), de modo que \(\varphi(y,s)=(G_{\nu s}*Y)(y)=\int_{\R} Y(w)G_{\nu s}(y-w)\,dw\) (nótese que \(2\nu=\sigma^2\)). Fíjese \(K=[-R,R]\times[s_0,s_1]\subset\R\times(0,\infty)\). Toda derivada \(\partial_y^a\partial_s^c G_{\nu s}(y-w)\) es un polinomio sobre \((y-w,\,s^{-1})\) por \(G_{\nu s}(y-w)\); por tanto, para \((y,s)\in K\),
 		\[
 		Y(w)\,\left|\partial_y^a\partial_s^c G_{\nu s}(y-w)\right|
 		\le C_{a,c,K}\,(1+|w|^{N})\,e^{B|w|}\,e^{-(|w|-R)^2/(4\nu s_1)}, \quad(|w|>R)
@@ -449,7 +449,7 @@
 	\end{teorema}
 	
 	\begin{proof}
-		\(\log C^{n+1}_j=\log C^n_j+\log D^n_j\); restando en \(j+1\) y \(j\): \(z^{n+1}_{j+1/2}=z^n_{j+1/2}+\log D_{j+1}-\log D_j\). Multiplicando por \(-\sigma^2/h\) y usando \(u=b-\sigma^2z/h\) se obtiene~\eqref{eq:consform}.
+		\(\log C^{n+1}_j=\log C^n_j+\log D^n_j\); restando en \(j+1\) y \(j\): \(z^{n+1}_{j+1/2}=z^n_{j+1/2}+\log D_{j+1}-\log D_j\). Medultiplicando por \(-\sigma^2/h\) y usando \(u=b-\sigma^2z/h\) se obtiene~\eqref{eq:consform}.
 		
 		\qedhere
 	\end{proof}
@@ -633,16 +633,84 @@
 	\clearpage
 	
 	\begin{thebibliography}{99}\small
-		\bibitem{Lindgren2020} J. Lindgren, ``Efficient Markets and Contingent Claims Valuation: An Information Theoretic Approach,'' \emph{Entropy}, vol. 22, no. 11, art. 1283, Nov. 2020, doi: 10.3390/e22111283.
+		
+		\bibitem{Strikwerda2004}
+		J. C. Strikwerda, \emph{Finite Difference Schemes and Partial Differential Equations}, 2.\textsuperscript{a} ed., SIAM, 2004.
+		Disponible en: \url{https://doi.org/10.1137/1.9780898717938}.
+		
+		\bibitem{LeVeque2007}
+		R. J. LeVeque, \emph{Finite Difference Methods for Ordinary and Partial Differential Equations}, SIAM, 2007.
+		Disponible en: \url{https://doi.org/10.1137/1.9780898717839}.
+		
+		\bibitem{Lindgren2020}
+		J. Lindgren, ``Efficient Markets and Contingent Claims Valuation: An Information Theoretic Approach,'' \emph{Entropy}, vol. 22, no. 11, art. 1283, Nov. 2020.
+		doi: \url{https://doi.org/10.3390/e22111283}.
+		Texto completo: \url{https://pmc.ncbi.nlm.nih.gov/articles/PMC7712322/}.
+		
+		\bibitem{Hopf1950}
+		E. Hopf, ``The partial differential equation \(u_t+uu_x=\mu u_{xx}\),'' \emph{Comm. Pure Appl. Math.}, vol. 3, pp. 201--230, 1950.
+		doi: \url{https://doi.org/10.1002/cpa.3160030302}.
+		
+		\bibitem{Cole1951}
+		J. D. Cole, ``On a quasi-linear parabolic equation occurring in aerodynamics,'' \emph{Quart. Appl. Math.}, vol. 9, pp. 225--236, 1951.
+		doi: \url{https://doi.org/10.1090/qam/42889}.
+		
+		\bibitem{Evans2010}
+		L. C. Evans, \emph{Partial Differential Equations}, 2.\textsuperscript{a} ed., Graduate Studies in Mathematics, vol. 19, American Mathematical Society, 2010.
+		Disponible en: \url{https://bookstore.ams.org/gsm-19-r/}.
+		
+		\bibitem{Oksendal2003}
+		B. {\O}ksendal, \emph{Stochastic Differential Equations: An Introduction with Applications}, 6.\textsuperscript{a} ed., Springer, 2003.
+		Disponible en: \url{https://doi.org/10.1007/978-3-642-14394-6}.
+		
+		\bibitem{Fleming1964}
+		W. H. Fleming, ``The convergence problem for differential games, II,'' en \emph{Advances in Game Theory}, Annals of Mathematics Studies, vol. 52, Princeton Univ. Press, 1964, pp. 195--210.
+		doi: \url{https://doi.org/10.1515/9781400882014-013}.
+		
+		\bibitem{CrandallLions1984}
+		M. G. Crandall, P.-L. Lions, ``Two approximations of solutions of Hamilton--Jacobi equations,'' \emph{Math. Comp.}, vol. 43, no. 167, pp. 1--19, 1984.
+		Texto completo: \url{https://www.ams.org/journals/mcom/1984-43-167/S0025-5718-1984-0744921-8/S0025-5718-1984-0744921-8.pdf}.
 		
 		\bibitem{ChaintronDaudin2025}
-		L.-P. Chaintron, S. Daudin, ``Optimal rate of convergence in the vanishing viscosity for quadratic Hamilton--Jacobi equations,'' \emph{arXiv preprint}, arXiv:2502.09103 [math.AP], 2025, doi: \url{https://doi.org/10.48550/arXiv.2502.09103}.
+		L.-P. Chaintron, S. Daudin, ``Optimal rate of convergence in the vanishing viscosity for quadratic Hamilton--Jacobi equations,'' \emph{arXiv preprint}, arXiv:2502.09103 [math.AP], 2025.
+		doi: \url{https://doi.org/10.48550/arXiv.2502.09103}.
+		PDF: \url{https://arxiv.org/pdf/2502.09103}.
+		
+		\bibitem{ChaintronDaudin2025b}
+		L.-P. Chaintron, S. Daudin, ``Optimal rate of convergence in the vanishing viscosity for uniformly convex Hamilton--Jacobi equations,'' \emph{arXiv preprint}, arXiv:2506.13255 [math.AP], 2025.
+		Disponible en: \url{https://arxiv.org/abs/2506.13255}.
+		PDF: \url{https://arxiv.org/pdf/2506.13255}.
 		
 		\bibitem{CirantGoffi2025}
-		M. Cirant, A. Goffi, ``Convergence rates for the vanishing viscosity approximation of Hamilton--Jacobi equations: the convex case,'' \emph{arXiv preprint}, arXiv:2502.15495 [math.AP], 2025, doi: \url{https://doi.org/10.48550/arXiv.2502.15495}.
+		M. Cirant, A. Goffi, ``Convergence rates for the vanishing viscosity approximation of Hamilton--Jacobi equations: the convex case,'' \emph{arXiv preprint}, arXiv:2502.15495 [math.AP], 2025.
+		doi: \url{https://doi.org/10.48550/arXiv.2502.15495}.
+		PDF: \url{https://arxiv.org/pdf/2502.15495}.
 		
-		\bibitem{Goffi2024}
-		A. Goffi, ``Remarks on the rate of convergence of the vanishing viscosity process of Hamilton--Jacobi equations,'' \emph{arXiv preprint}, arXiv:2412.15651 [math.AP], 2024, doi: \url{https://doi.org/10.48550/arXiv.2412.15651}.
+		\bibitem{QSTY2024}
+		J. Qian, T. Sprekeler, H. V. Tran, Y. Yu, ``Optimal rate of convergence in periodic homogenization of viscous Hamilton--Jacobi equations,'' \emph{Multiscale Model. Simul.}, vol. 22, no. 4, pp. 1558--1584, 2024 (arXiv:2402.03091).
+		Disponible en: \url{https://arxiv.org/abs/2402.03091}.
+		PDF: \url{https://arxiv.org/pdf/2402.03091}.
+		
+		\bibitem{Kuznetsov1976}
+		N. N. Kuznetsov, ``The accuracy of certain approximate methods for the computation of weak solutions of a first order quasilinear equation,'' \emph{U.S.S.R. Comput. Math. Math. Phys.}, vol. 16, no. 6, pp. 105--119, 1976.
+		doi: \url{https://doi.org/10.1016/0041-5553(76)90046-X}.
+		
+		\bibitem{BouchutPerthame1998}
+		F. Bouchut, B. Perthame, ``Kru\v{z}kov's estimates for scalar conservation laws revisited,'' \emph{Trans. Amer. Math. Soc.}, vol. 350, no. 7, pp. 2847--2870, 1998.
+		doi: \url{https://doi.org/10.1090/S0002-9947-98-02204-1}.
+		
+		\bibitem{Wang1999}
+		W.-C. Wang, ``On \(L^1\) convergence rate of viscous and numerical approximate solutions of genuinely nonlinear scalar conservation laws,'' \emph{SIAM J. Math. Anal.}, vol. 30, no. 1, pp. 38--52, 1999.
+		doi: \url{https://doi.org/10.1137/S0036141097316408}.
+		
+		\bibitem{Fletcher1983}
+		C. A. J. Fletcher, ``A comparison of finite element and finite difference solutions of the one- and two-dimensional Burgers' equations,'' \emph{J. Comput. Phys.}, vol. 51, pp. 159--188, 1983.
+		doi: \url{https://doi.org/10.1016/0021-9991(83)90085-2}.
+		
+		\bibitem{Kutluay1999}
+		S. Kutluay, A. R. Bahadir, A. {\"O}zde\c{s}, ``Numerical solution of one-dimensional Burgers equation: explicit and exact-explicit finite difference methods,'' \emph{J. Comput. Appl. Math.}, vol. 103, no. 2, pp. 251--261, 1999.
+		doi: \url{https://doi.org/10.1016/S0377-0427(98)00261-1}.
+		
 	\end{thebibliography}
 	
 \end{document}
