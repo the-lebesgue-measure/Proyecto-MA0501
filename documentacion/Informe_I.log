@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.25.7 (MiKTeX 26.5) (format=lualatex 2026.10.23)  30 OCT 2026 08:55
+This is LuaHBTeX, Version 1.25.7 (MiKTeX 26.5) (format=lualatex 2026.10.23)  31 OCT 2026 17:40
  restricted system commands enabled.
 **Informe_I.tex
 (./Informe_I.tex
@@ -1188,7 +1188,7 @@ Package microtype Info: Loading generic protrusion settings for font family
  [1
 
 {C:/Users/antho/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] [3]
-Overfull \hbox (16.66617pt too wide) in paragraph at lines 297--298
+Overfull \hbox (16.66617pt too wide) in paragraph at lines 303--304
 []\TU/LatinModernRoman(0)/m/n/10.95 Sea $\TU/NewCMMath-Book(1)/m/n/10.95 𝐺[]
 (𝑧) = (4𝜋𝜈𝑠)[]𝑒[]$\TU/LatinModernRoman(0)/m/n/10.95 , de modo que
  $\TU/NewCMMath-Book(1)/m/n/10.95 𝜑(𝑦, 𝑠) = (𝐺[] ∗ 𝑌)(𝑦) = 
@@ -1196,7 +1196,7 @@ Overfull \hbox (16.66617pt too wide) in paragraph at lines 297--298
  []
 
 [4] [5] [6] [7]
-Overfull \hbox (13.59659pt too wide) detected at line 509
+Overfull \hbox (13.59659pt too wide) detected at line 517
 [] \TU/NewCMMath-Book(1)/m/n/10.95 = 𝜙[] + 𝑂(Δ𝑠[]𝜙[]),  𝜃𝐿[]
 𝜙[] + (1 − 𝜃)𝐿[]𝜙[] = 𝐿[]𝜙[] + (𝜃 − [])Δ𝑠 𝐿[]
 𝜙[] + 𝑂(Δ𝑠[])
@@ -1204,7 +1204,7 @@ Overfull \hbox (13.59659pt too wide) detected at line 509
 
 [8]
 
-LaTeX Warning: Citation `Goffi2024' on page 9 undefined on input line 539.
+LaTeX Warning: Citation `Goffi2024' on page 9 undefined on input line 547.
 
 [9] [10] [11
 
@@ -1227,10 +1227,10 @@ Here is how much of LuaTeX's memory you used:
  969 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 1 local_par, 8 glue, 5 kern, 1 penalty, 3 glyph, 81
  attribute, 63 glue_spec, 81 attribute_list, 1 write, 7 pdf_action nodes
-   avail lists: 1:1,2:1462,3:572,4:285,5:752,6:63,7:9755,8:101,9:1354,10:11,11:6
-98
+   avail lists: 1:1,2:1464,3:572,4:285,5:761,6:63,7:9755,8:101,9:1373,10:11,11:6
+83
  47061 multiletter control sequences out of 65536+600000
- 120 fonts using 59828179 bytes
+ 120 fonts using 59828039 bytes
  71i,13n,93p,1005b,781s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/antho/AppData/Local/Programs/MiKTeX/fonts/opentype/public/lm/lmmono10-
 regular.otf><c:/users/antho/appdata/local/programs/miktex/fonts/opentype/public/
@@ -1254,9 +1254,9 @@ s/opentype/public/lm/lmroman8-regular.otf><c:/users/antho/appdata/local/programs
 ocal/Programs/MiKTeX/fonts/opentype/public/newcomputermodern/newcmmath-book.otf>
 <c:/users/antho/appdata/local/programs/miktex/fonts/opentype/public/lm/lmroman12
 -bold.otf>
-Output written on Informe_I.pdf (12 pages, 211021 bytes).
+Output written on Informe_I.pdf (12 pages, 210437 bytes).
 
-PDF statistics: 414 PDF objects out of 1000 (max. 8388607)
+PDF statistics: 410 PDF objects out of 1000 (max. 8388607)
  98 named destinations out of 1000 (max. 1048576)
  129 words of extra memory for PDF output out of 10000 (max. 100000000)
 

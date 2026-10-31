@@ -125,7 +125,7 @@
 	
 	\section{Introducción}\label{sec:intro}
 	
-	El proyecto estudia la conexión entre un problema de control estocástico inspirado en el enfoque de Lindgren~\cite{Lindgren2020}, la ecuación de Black-Scholes y la ecuación viscosa de Burgers. Lindgren muestra que el drift de un mercado que soporta la valoración de Black--Scholes cumple una ecuación de Burgers retrógrada~\cite[Teorema~1]{Lindgren2020}.
+	El proyecto estudia la conexión entre un problema de control estocástico inspirado en el enfoque de Lindgren~\cite{Lindgren2020}, la ecuación de Black-Scholes y la ecuación viscosa de Burgers. Lindgren muestra que el drift de un mercado que soporta la valoración de Black--Scholes cumple una ecuación de Burger.
 	
 	\section{Preliminares}\label{sec:prelim}
 	
@@ -139,7 +139,13 @@
 	
 	\(\tau\in[0,T]\) es el tiempo calendario, \(s:=T-\tau\) el tiempo hasta el vencimiento, \(x=\log S\) el log-precio. El \emph{payoff} \(Y:\R\to[0,\infty)\) es medible, no nulo en un conjunto de medida positiva, con \(Y(x)\le Ae^{B|x|}\).
 	
-	Para las Secciones~\ref{subsec:burgers}-\ref{subsec:error} se supone además (HY) \(Y\in C^3(\R)\), \(0  < Y \leq M\) y \(\ell:=\log Y\) tiene \(\ell',\ell'',\ell'''\) acotadas.
+	\begin{itemize}[leftmargin=2em]
+		\item[\textnormal{(HY)}] \(Y\in C^3(\R)\), \(0<Y\le M\) y \(\ell:=\log Y\) tiene \(\ell',\ell'',\ell'''\) acotadas; se escribe \(\Lambda:=\sup|\ell'|\).
+	\end{itemize}
+	
+	\begin{itemize}[leftmargin=2em]
+		\item[\textnormal{(HY\(^+\))}] \(Y\in C_b^\infty(\R)\) (todas las derivadas acotadas) e \(\inf_{\R}Y>0\).
+	\end{itemize}
 	
 	\subsection{Problema de control de Lindgren y linealización}
 	
@@ -148,8 +154,6 @@
 	\begin{equation}\label{eq:I}
 		I(m)=\frac12\alpha m^2+\beta m+\gamma,\qquad \alpha>0
 	\end{equation}
-	
-	y el costo es~\cite[ec.~(6)--(7)]{Lindgren2020}
 	
 	\begin{equation}\label{eq:cost}
 		\mathcal J(\mu;x,\tau)=\E_{x,\tau}\left[\int_\tau^T I(\mu_t)\,dt+g(X_T)\right],\qquad J(x,\tau)=\inf_\mu\mathcal J(\mu;x,\tau)
@@ -270,6 +274,8 @@
 		
 	\end{proof}
 	
+	Hasta acá es del articulo base.
+	
 	\begin{corolario}[Forma progresiva]\label{cor:fwd}
 		Con \(s=T-\tau\) y \(u(x,s):=-\mu(x,T-s)=b-\sigma^2\partial_x\log C\):
 		
@@ -317,6 +323,8 @@
 		La convergencia \(C(\cdot,s)\to Y\) en puntos de continuidad es la propiedad de aproximación de la identidad del núcleo gaussiano, con la cola controlada por \(Y(w)\le Ae^{B|w|}\).
 		
 	\end{proof}
+	
+	Hopf 1950.
 	
 	\begin{proposicion}[Cotas a priori uniformes en \(\nu\)]\label{prop:apriori}
 		Sea \(Y\) que cumple (HY), de modo que \(u_0=b-\sigma^2\ell'\in C_b^2(\R)\), y \(u\) la solución acotada de~\eqref{eq:burgers}. Entonces
