@@ -125,7 +125,16 @@
 	
 	\section{Introducción}\label{sec:intro}
 	
-	El proyecto estudia la conexión entre un problema de control estocástico inspirado en el enfoque de Lindgren~\cite{Lindgren2020}, la ecuación de Black-Scholes y la ecuación viscosa de Burgers. Lindgren muestra que el drift de un mercado que soporta la valoración de Black--Scholes cumple una ecuación de Burger.
+	La ecuación de Burgers viscosa de una dimensión
+	\begin{equation}\label{eq:burgers-intro}
+		u_x + uu_x = \nu u_{xx}, \qquad \nu > 0
+	\end{equation} 
+	
+	es un modelo estándar para estudiar la viscosidad sobre la formación de choques, este mismo, le linealiza bajo la transformación de Hopf-Cole [referencia]. Para este proyecto, se toma como base la siguiente pregunta de investigación:
+	
+	\begin{quote}
+		\textbf{Pregunta de investigación.} ¿Cómo influyen el tamaño de la malla espacial \(h\), el paso temporal \(\Delta s\) y el coeficiente de viscosidad \(\nu\) en el error y en la convergencia de un esquema de diferencias finitas para la ecuación de Burgers viscosa~\eqref{eq:burgers-intro}?
+	\end{quote}
 	
 	\section{Preliminares}\label{sec:prelim}
 	
@@ -718,6 +727,47 @@
 		\bibitem{Kutluay1999}
 		S. Kutluay, A. R. Bahadir, A. {\"O}zde\c{s}, ``Numerical solution of one-dimensional Burgers equation: explicit and exact-explicit finite difference methods,'' \emph{J. Comput. Appl. Math.}, vol. 103, no. 2, pp. 251--261, 1999.
 		doi: \url{https://doi.org/10.1016/S0377-0427(98)00261-1}.
+		
+		\bibitem{HigueresRoldan2023}
+		I. Higueras, T. Roldán, ``A new insight on positivity and contractivity of the Crank--Nicolson scheme for the heat equation,'' \emph{arXiv preprint}, arXiv:2301.01066 [math.NA].
+		PDF: \url{https://arxiv.org/pdf/2301.01066}.
+		
+		\bibitem{DoikouSklaveniti2019}
+		A. Doikou, S. Sklaveniti, ``Discretizations of the generalized AKNS scheme,'' \emph{arXiv preprint}, arXiv:1910.00957, 2019.
+		PDF: \url{https://arxiv.org/pdf/1910.00957}.
+		
+		\bibitem{ChenZhangLiu2019}
+		C. Chen, X. Zhang, Z. Liu, ``A high-order compact finite difference scheme and precise integration method based on modified Hopf--Cole transformation for numerical simulation of $n$-dimensional Burgers' system,'' \emph{arXiv preprint}, arXiv:1906.07150, 2019.
+		PDF: \url{https://arxiv.org/pdf/1906.07150}.
+		
+		\bibitem{BlanchardHigham2021}
+		P. Blanchard, D. J. Higham, N. J. Higham, ``Accurately computing the log-sum-exp and softmax functions,'' \emph{IMA J. Numer. Anal.}, vol. 41, no. 4, 2021; arXiv:1909.03469 [math.NA].
+		doi: \url{https://doi.org/10.1093/imanum/draa038}.
+		
+		\bibitem{Ohwada2009}
+		T. Ohwada, ``Cole--Hopf transformation as numerical tool for the Burgers equation,'' \emph{Applied and Computational Mathematics}, 2009. \ph{confirmar volumen y páginas}
+		
+		\bibitem{Widlund1966}
+		O. B. Widlund, ``Stability of parabolic difference schemes in the maximum norm,'' \emph{Numer. Math.}, vol. 8, pp. 186--202, 1966.
+		doi: \url{https://doi.org/10.1007/BF02163187}.
+		
+		\bibitem{Serdyukova1966}
+		S. I. Serdyukova, ``Stability in $C$ of linear difference schemes with constant real coefficients,'' \emph{Zh. Vychisl. Mat. Mat. Fiz.}, vol. 6, no. 3, pp. 477--486, 1966 (\emph{U.S.S.R. Comput. Math. Math. Phys.}, vol. 6, no. 3, pp. 89--102).
+		
+		\bibitem{HundsdorferVerwer2003}
+		W. Hundsdorfer, J. G. Verwer, \emph{Numerical Solution of Time-Dependent Advection-Diffusion-Reaction Equations}, Springer Series in Computational Mathematics, vol. 33, Springer, 2003.
+		
+		\bibitem{WarmingHyett1974}
+		R. F. Warming, B. J. Hyett, ``The modified equation approach to the stability and accuracy analysis of finite-difference methods,'' \emph{J. Comput. Phys.}, vol. 14, pp. 159--179, 1974.
+		
+		\bibitem{GriffithsSanzSerna1986}
+		D. F. Griffiths, J. M. Sanz-Serna, ``On the scope of the method of modified equations,'' \emph{SIAM J. Sci. Stat. Comput.}, vol. 7, pp. 994--1008, 1986.
+		
+		\bibitem{Kruzkov1970}
+		S. N. Kru\v{z}kov, ``First order quasilinear equations in several independent variables,'' \emph{Math. USSR Sb.}, vol. 10, no. 2, pp. 217--243, 1970.
+		
+		\bibitem{Dafermos2016}
+		C. M. Dafermos, \emph{Hyperbolic Conservation Laws in Continuum Physics}, 4.\textsuperscript{a} ed., Grundlehren der mathematischen Wissenschaften, vol. 325, Springer, 2016.
 		
 	\end{thebibliography}
 	
