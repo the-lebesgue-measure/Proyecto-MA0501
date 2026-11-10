@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.25.7 (MiKTeX 26.5) (format=lualatex 2026.10.23)  1 NOV 2026 12:05
+This is LuaHBTeX, Version 1.25.7 (MiKTeX 26.5) (format=lualatex 2026.10.23)  4 NOV 2026 13:40
  restricted system commands enabled.
 **Informe_I.tex
 (./Informe_I.tex
@@ -1020,26 +1020,26 @@ Package cleveref Info: always capitalise cross-reference names on input line 78
 (./Informe_I.aux)
 \openout1 = Informe_I.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
 
 (C:/Users/antho/AppData/Local/Programs/MiKTeX/tex/latex/graphics/graphicx.sty
 Package: graphicx 2026-05-17 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
@@ -1060,13 +1060,13 @@ Package graphics Info: Driver file: luatex.def on input line 106.
 \Gin@req@width=\dimen262
 )
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 112.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 126.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 112.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 126.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 112.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 126.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 112.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 126.
 
 
 Package unicode-math Warning: Using \overbracket and \underbracket from
@@ -1120,13 +1120,13 @@ Package unicode-math Warning: I'm going to overwrite the following commands
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \microtypecontext on input line 112.
-Package microtype Info: Applying patch `item' on input line 112.
-Package microtype Info: Applying patch `toc' on input line 112.
-Package microtype Info: Applying patch `eqnum' on input line 112.
-Package microtype Info: Applying patch `footnote' on input line 112.
-Package microtype Info: Applying patch `verbatim' on input line 112.
-LaTeX Info: Redefining \microtypesetup on input line 112.
+LaTeX Info: Redefining \microtypecontext on input line 126.
+Package microtype Info: Applying patch `item' on input line 126.
+Package microtype Info: Applying patch `toc' on input line 126.
+Package microtype Info: Applying patch `eqnum' on input line 126.
+Package microtype Info: Applying patch `footnote' on input line 126.
+Package microtype Info: Applying patch `verbatim' on input line 126.
+LaTeX Info: Redefining \microtypesetup on input line 126.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1169,7 +1169,7 @@ fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 \c@lstlisting=\count353
-Package hyperref Info: Link coloring ON on input line 112.
+Package hyperref Info: Link coloring ON on input line 126.
  (./Informe_I.out) (./Informe_I.out)
 \@outlinefile=\write3
 
@@ -1187,51 +1187,38 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
  [1
 
-{C:/Users/antho/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] [3]
-Overfull \hbox (16.66617pt too wide) in paragraph at lines 312--313
-[]\TU/LatinModernRoman(0)/m/n/10.95 Sea $\TU/NewCMMath-Book(1)/m/n/10.95 𝐺[]
-(𝑧) = (4𝜋𝜈𝑠)[]𝑒[]$\TU/LatinModernRoman(0)/m/n/10.95 , de modo que
- $\TU/NewCMMath-Book(1)/m/n/10.95 𝜑(𝑦, 𝑠) = (𝐺[] ∗ 𝑌)(𝑦) = 
-[][] 𝑌(𝑤)𝐺[](𝑦 −
+{C:/Users/antho/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] [3] [4] 
+[5]
+Overfull \hbox (36.40271pt too wide) in paragraph at lines 384--385
+[]\TU/LatinModernRoman(0)/m/n/10.95 (b) Como $\TU/NewCMMath-Book(1)/m/n/10.95 
+𝑒[] = 𝑒[]𝑒[]𝑒[]$\TU/LatinModernRoman(0)/m/n/10.95 , se tie-ne $\TU/
+NewCMMath-Book(1)/m/n/10.95 𝜑(𝑦, 𝑠) = (4𝜋𝜈𝑠)[]𝑒[]Ψ[][]
+𝑦/(2𝜈𝑠)[]$
  []
 
-[4] [5] [6] [7]
-Overfull \hbox (13.59659pt too wide) detected at line 526
-[] \TU/NewCMMath-Book(1)/m/n/10.95 = 𝜙[] + 𝑂(Δ𝑠[]𝜙[]),  𝜃𝐿[]
-𝜙[] + (1 − 𝜃)𝐿[]𝜙[] = 𝐿[]𝜙[] + (𝜃 − [])Δ𝑠 𝐿[]
-𝜙[] + 𝑂(Δ𝑠[])
- []
+[6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21
 
-[8]
-
-LaTeX Warning: Citation `Goffi2024' on page 9 undefined on input line 556.
-
-[9] [10] [11
-
-] [12] (./Informe_I.aux)
+]
+[22] (./Informe_I.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-09-09>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `Informe_I.out' has not changed.
-(rerunfilecheck)             Checksum: F757F40767404D918F4DD053DCB3E04F;3154.
+(rerunfilecheck)             Checksum: 4F24BEF4560DED145E8FEA9DB39EE7D5;5695.
 )
 
 Here is how much of LuaTeX's memory you used:
- 24605 strings out of 475604
+ 24923 strings out of 475604
  125240,1648299 words of node,token memory allocated
- 997 words of node memory still in use:
-   8 hlist, 2 vlist, 2 rule, 1 local_par, 8 glue, 5 kern, 1 penalty, 3 glyph, 85
- attribute, 63 glue_spec, 85 attribute_list, 1 write, 9 pdf_action nodes
-   avail lists: 1:1,2:1460,3:572,4:285,5:761,6:60,7:9755,8:101,9:1373,10:11,11:7
-49
- 47077 multiletter control sequences out of 65536+600000
- 120 fonts using 59827899 bytes
- 71i,13n,93p,1005b,781s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 1289 words of node memory still in use:
+   8 hlist, 2 vlist, 2 rule, 1 local_par, 8 glue, 5 kern, 1 penalty, 3 glyph, 15
+8 attribute, 63 glue_spec, 158 attribute_list, 1 write, 9 pdf_action nodes
+   avail lists: 1:1,2:1441,3:556,4:292,5:924,6:63,7:9586,8:101,9:1476,10:22,11:7
+43
+ 47328 multiletter control sequences out of 65536+600000
+ 126 fonts using 60618307 bytes
+ 71i,13n,93p,1866b,821s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/antho/AppData/Local/Programs/MiKTeX/fonts/opentype/public/lm/lmmono10-
 regular.otf><c:/users/antho/appdata/local/programs/miktex/fonts/opentype/public/
 lm/lmroman7-regular.otf><c:/users/antho/appdata/local/programs/miktex/fonts/open
@@ -1254,9 +1241,9 @@ s/opentype/public/lm/lmroman8-regular.otf><c:/users/antho/appdata/local/programs
 ocal/Programs/MiKTeX/fonts/opentype/public/newcomputermodern/newcmmath-book.otf>
 <c:/users/antho/appdata/local/programs/miktex/fonts/opentype/public/lm/lmroman12
 -bold.otf>
-Output written on Informe_I.pdf (12 pages, 217773 bytes).
+Output written on Informe_I.pdf (22 pages, 355099 bytes).
 
-PDF statistics: 430 PDF objects out of 1000 (max. 8388607)
- 111 named destinations out of 1000 (max. 1048576)
- 129 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 696 PDF objects out of 1000 (max. 8388607)
+ 178 named destinations out of 1000 (max. 1048576)
+ 193 words of extra memory for PDF output out of 10000 (max. 100000000)
 
