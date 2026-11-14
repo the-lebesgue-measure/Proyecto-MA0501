@@ -1,0 +1,65 @@
+# Archivos auxiliares de compilación
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+*.tex
+
+# Bibliografía
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+
+# Nomenclatura
+*.nlo
+*.nls
+
+# Indexación
+*.xdy
+
+# Minted
+_minted*
+*.pyg
+
+# TikZ/PGF
+*.dpth
+*.md5
+
+# Beamer
+*.nav
+*.snm
+*.vrb
+
+# Arara
+*.arara.log
+
+# Latexmk
+latexmkrc.bak
+
+# Temporal
+*.tmp
+*.temp
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Salidas de compilación (descomentar si no quieres versionarlas)
+# *.pdf
